@@ -1,0 +1,31 @@
+
+
+
+
+#root {
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas:
+        'root-left root-main root-right'
+        'root-playing root-playing root-playing';
+    grid-template-columns: 200px auto 250px; 
+    grid-template-rows: auto 90px;  
+}
+
+.root__left {
+    grid-area: root-left;
+}
+
+.root__main {
+    grid-area: root-main;
+}
+
+.root__right {
+    grid-area: root-right;
+}
+
+
+.root__playing {
+    grid-area: root-playing;
+}
