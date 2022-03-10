@@ -242,5 +242,175 @@
 /*----------------CSS PLAYING-SIDEBAR------------------*/
 .root__playing {
     grid-area: root-playing;
-    background-color: #4d4d4d;
+    background-color: #181818;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    justify-content: space-between;
 }
+
+.playing-song {
+    display: flex;
+}
+
+.playing-song-img {
+    width: 56px;
+}
+
+.playing-song-content {
+    display: flex;
+    align-items: center;
+}
+
+.playing-song-content-info {
+    color: var(--white-color);
+    
+    margin: 0 14px;
+}
+.playing-song-content-info-name {
+    line-height: 22px;
+    font-size: 1.4rem;
+    white-space: nowrap;
+}
+
+.playing-song-content-info-artist {
+    font-size: 1.1rem;
+    color: #afafaf;
+}
+
+.playing-song-content-favourite {
+    width: 14px;
+    margin: 8px;
+
+}
+
+.playing-song-content-overlay {
+    width: 16px;
+    margin: 8px;    
+}
+
+.playing-control {
+    height: 100%;
+    width: 40%;
+}
+
+.playing-control__buttons {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    justify-content: center;
+}
+
+.shuffle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shuffle__img {
+    width: 16px;
+    margin: 0 12px;
+}
+.shuffle__active {
+    width: 4px;
+    margin: 0 12px;
+
+}
+
+.playing-control__buttons-prev {
+    width: 10px;
+    margin: 0 12px;
+
+}
+
+.playing-control__buttons-playpause {
+    width: 34px;
+    margin: 0 12px;
+
+
+}
+
+.playing-control__buttons-next {
+    width: 10px;
+    margin: 0 12px;
+
+}
+ 
+.repeat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.repeat__img {
+    width: 16px;
+    margin: 0 12px;
+
+
+}
+
+.repeat__active {
+    width: 4px;
+    margin: 0 12px;
+
+}
+
+.playing-control__playback {
+    display: flex;
+    align-items: center;
+}
+
+.playing-control__playback__timeplayed {
+    color: rgb(179, 179, 179);
+}
+
+.playing-control__playback__slider {
+    background: #535353;
+    border-radius: 8px;
+    height: 4px;
+    width: 100%;
+    margin: 0 10px;
+}
+
+.playing-control__playback__timetotal {
+    color: rgb(179, 179, 179);
+}
+
+.playing-mediacontrol {
+    display: flex;
+    align-items: center;
+}
+
+.playing-mediacontrol__list {
+    width: 16px;
+    margin: 8px;
+}
+
+.playing-mediacontrol__remote {
+    width: 16px;
+    margin: 8px;
+    
+}
+
+.playing-mediacontrol__volumebar {
+    display: flex;
+    align-items: center;
+}
+
+.playing-mediacontrol__volumebar-btn {
+    width: 16px;
+    margin: 8px;
+
+}
+
+.playing-mediacontrol__volumebar-range {
+    height: 4px;
+    width: 80%;
+}
+
+.playing-mediacontrol__fullscreen {
+    width: 16px;
+    margin: 8px;
+    
+}
+
