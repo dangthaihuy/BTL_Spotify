@@ -105,16 +105,87 @@
     background: rgba(90, 90, 90, 1); 
 }
 
+.dis-flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+#main-head {
+    padding: 0 24px;
+}
 
+#head-right {
+    background-color: #000;
+}
 
+#mainhead-fixed {
+    position: fixed;
+    height: 60px;
+    justify-content: space-between;
+}
 
+#mainhead-fixed img {
+    width: 32px;
+    height: 32px;
+}
 
+#mainhead-fixed .mainhead-item {
+    justify-content: space-between;
+}
 
+#mainhead-fixed .mainhead-item p {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+}
 
+#mainhead-fixed .mainhead-item i {
+    font-size: 18px;
+    color: #fff;
+}
 
+#mainhead-content {
+    margin-top: 60px;
+}
 
+#main-head h1 {
+    color: #fff;
+    font-size: 32px;
+}
 
+#mainhead-nav {
+    height: 176px;
+    display: grid;
+    grid-template-columns: 31% 31% 31%;
+    column-gap: 3.5%;
+    row-gap: 9%;
+}
+
+#mainhead-nav li {
+    background-color: rgba(255, 255, 255, .1);
+    width: 100%;
+    /* border-radius: 1%; */
+}
+
+#mainhead-nav .list-img {
+    width: 80px;
+    height: 80p;
+}
+
+#mainhead-nav .head-navin4 {
+    width: 100%;
+    padding: 16px;
+}
+
+#mainhead-nav h2 {
+    width: 161px;
+}
+
+#mainhead-nav .nav-play {
+    width: 40px;
+    height: 40px;
+}
 
 /*----------------CSS RIGHT-SIDEBAR------------------*/
 .root__right {
