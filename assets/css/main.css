@@ -1,6 +1,15 @@
 
+.html {
+    text-decoration: none;
+}
 
+.font-14{
+    font-size: 14px;
+}
 
+.font-16 {
+    font-size: 16px;
+}
 
 #root {
     height: 100%;
@@ -111,7 +120,12 @@
     align-items: center;
 }
 
+.hide {
+    display: none;
+}
+
 #main-head {
+    background-image: linear-gradient(rgba(13, 54, 75, 0.35), #000);
     padding: 0 24px;
 }
 
@@ -123,6 +137,7 @@
     position: fixed;
     height: 60px;
     justify-content: space-between;
+    width: 67.5%;
 }
 
 #mainhead-fixed img {
@@ -146,12 +161,17 @@
 }
 
 #mainhead-content {
-    margin-top: 60px;
+    padding-top: 60px;
 }
 
 #main-head h1 {
+    margin-top: 24px;
     color: #fff;
     font-size: 32px;
+}
+
+#mainhead-conlist {
+    margin-top: 16px;
 }
 
 #mainhead-nav {
@@ -160,6 +180,14 @@
     grid-template-columns: 31% 31% 31%;
     column-gap: 3.5%;
     row-gap: 9%;
+}
+
+#mainhead-nav li:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+#mainhead-nav li:hover .nav-play {
+    display: block;
 }
 
 #mainhead-nav li {
@@ -185,6 +213,58 @@
 #mainhead-nav .nav-play {
     width: 40px;
     height: 40px;
+}
+
+#main-head .nav-list h1 {
+    margin-bottom: 20px;
+}
+
+#main-head .play-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#main-head .playlist-item:hover .list-play {
+    display: block;
+}
+
+#main-head .playlist-item:hover {
+    background-color: #272727;
+}
+
+#main-head .playlist-item {
+    display: flex;
+    position: relative;
+    
+    flex-direction: column;
+    width: 18%;
+    padding: 16px;
+    background-color: #181818;
+}
+
+#main-head .playlist-item .list-play {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 14%;
+    top: 46%;
+}
+
+#main-head .playlist-item img {
+    width: 154px;
+    height: 153px;
+    border-radius: 10%;
+    margin-bottom: 16px;
+}
+
+#main-head .playlist-item a {
+    text-decoration: none;
+    color: #afafaf;
+}
+
+#main-head .playlist-item .header {
+    color: #fff;
 }
 
 /*----------------CSS RIGHT-SIDEBAR------------------*/
