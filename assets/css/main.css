@@ -147,6 +147,7 @@
 }
 
 #mainhead-fixed {
+    z-index: 5;
     position: fixed;
     height: 60px;
     justify-content: space-between;
@@ -177,17 +178,16 @@
     padding-top: 60px;
 }
 
-#main-head h1 {
-    margin-top: 24px;
-    color: #fff;
+#mainhead-content h1 {
     font-size: 32px;
+    color: #fff;
 }
 
 #mainhead-conlist {
     margin-top: 16px;
 }
 
-#mainhead-nav {
+#mainhead-connav {
     height: 176px;
     display: grid;
     grid-template-columns: 31% 31% 31%;
@@ -195,58 +195,74 @@
     row-gap: 9%;
 }
 
-#mainhead-nav li:hover {
+#mainhead-connav li:hover {
     background-color: rgba(255, 255, 255, .2);
 }
 
-#mainhead-nav li:hover .nav-play {
+#mainhead-connav li:hover .nav-play {
     display: block;
 }
 
-#mainhead-nav li {
+#mainhead-connav li {
     background-color: rgba(255, 255, 255, .1);
     width: 100%;
     /* border-radius: 1%; */
 }
 
-#mainhead-nav .list-img {
+#mainhead-connav .list-img {
     width: 80px;
     height: 80p;
 }
 
-#mainhead-nav .head-navin4 {
+#mainhead-connav .head-navin4 {
     width: 100%;
     padding: 16px;
 }
 
-#mainhead-nav h2 {
+#mainhead-connav h2 {
     width: 161px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
 }
 
-#mainhead-nav .nav-play {
+#mainhead-connav .nav-play {
     width: 40px;
     height: 40px;
 }
 
-#main-head .nav-list h1 {
-    margin-bottom: 20px;
+#main-body {
+    background-color: #000;
+    padding: 0 24px;
+    padding-top: 36px;
 }
 
-#main-head .play-list {
+#main-body .body-nav-list {
+    padding-bottom: 50px;
+}
+
+#main-body .body-nav-list h1 {
+    margin-bottom: 20px;
+    
+    color: #fff;
+    font-size: 24px;
+}
+
+#main-body .body-play-list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-#main-head .playlist-item:hover .list-play {
+#main-body .body-playlist-item:hover .body-list-play {
     display: block;
 }
 
-#main-head .playlist-item:hover {
+#main-body .body-playlist-item:hover {
     background-color: #272727;
 }
 
-#main-head .playlist-item {
+#main-body .body-playlist-item {
     display: flex;
     position: relative;
     
@@ -256,7 +272,7 @@
     background-color: #181818;
 }
 
-#main-head .playlist-item .list-play {
+#main-body .body-playlist-item .body-list-play {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -264,19 +280,19 @@
     top: 46%;
 }
 
-#main-head .playlist-item img {
+#main-body .body-playlist-item img {
     width: 154px;
     height: 153px;
     border-radius: 10%;
     margin-bottom: 16px;
 }
 
-#main-head .playlist-item a {
+#main-body .body-playlist-item a {
     text-decoration: none;
     color: #afafaf;
 }
 
-#main-head .playlist-item .header {
+#main-body .body-playlist-item .body-playlist-item-header {
     color: #fff;
 }
 
