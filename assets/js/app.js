@@ -8,12 +8,18 @@ const mainHead = $('#main-head')
 const mainOpenPlayList = $('.main-openplaylist')
 const mainOpenPlayListHeader = $('.main-openplaylist-header')
 const actionePrevPage = $('#action__prevpage')
+
 const titleCurrentSong = $('.playing-song-content-info-name')
 const artistCurrentSong = $('.playing-song-content-info-artist')
 const imgCurrentSong = $('.playing-song-img')
 const audioCurrentSong = $('#audio')
 const processCurrentSong = $('.playing-control__playback__slider')
+
 const playBtn = $('.playing-control__buttons-playpause')
+const previousBtn = $('.playing-control__buttons-prev')
+const nextBtn = $('.playing-control__buttons-next')
+const shuffleBtn = $('.shuffle')
+const repeatBtn = $('.repeat')
 
 const app = {
     allSongs,
@@ -33,13 +39,8 @@ const app = {
 
     //render list nhạc
     render: function () {
-
-        //code của quỳnh
-
-
-
-        const htmls = this.allSongs.map(song => {
-            return `<div class="main-openplaylist-body__table-item">
+        const htmls = this.allSongs.map((song, index) => {
+            return `<div class="main-openplaylist-body__table-item ${index == this.currentIndex ? 'active': ''}">
                 <div class="number">1</div>
                 <div class="title">
                     <img src="${song.img}" alt="" class="title-img">
@@ -112,15 +113,61 @@ const app = {
         processCurrentSong.onchange = function (e) {
             const seekTime = e.target.value * audioCurrentSong.duration / 100
             audioCurrentSong.currentTime = seekTime
-        },
-            helloList.onclick = function (e) {
-                const listClick = e.target.closest('.mainhead-connav-item')
-                if (listClick) {
-                    mainHead.style.display = 'none'
-                    mainOpenPlayList.style.display = 'block'
-                    _this.getScreenClickList(listClick.getAttribute('id-list'));
-                }
+        }
+
+        // preview song
+        previousBtn.onclick = function () {
+            if (_this.isRandom) {
+                _this.loadRandomSong()
+            } else {
+                _this.loadPreviousSong()  
             }
+            audioCurrentSong.play()
+            _this.render()
+        }
+
+        // next song
+        nextBtn.onclick = function () {
+            if (_this.isRandom) {
+                _this.loadRandomSong()
+            } else {
+                _this.loadNextSong()  
+            }
+            audioCurrentSong.play()
+            _this.render()
+        }
+
+        // random song
+        shuffleBtn.onclick = function () {
+            _this.isRandom = !_this.isRandom
+            //bật tắt active, đồng thời truyền vào đối số, khi _this.isRandom = true thì thêm active và ngược lại
+            shuffleBtn.classList.toggle('active', _this.isRandom)
+        }
+
+        //repeat song
+        repeatBtn.onclick = function () {
+            _this.isRepeat = !_this.isRepeat
+            repeatBtn.classList.toggle('active', _this.isRepeat)
+        }
+
+        //handle when this song ended
+        audioCurrentSong.onended = function () {
+            if (_this.isRepeat) {
+                audioCurrentSong.play()
+            } else {
+                nextBtn.click()
+            }
+        }
+
+        //====
+        helloList.onclick = function (e) {
+            const listClick = e.target.closest('.mainhead-connav-item')
+            if (listClick) {
+                mainHead.style.display = 'none'
+                mainOpenPlayList.style.display = 'block'
+                _this.getScreenClickList(listClick.getAttribute('id-list'));
+            }
+        }
 
         actionePrevPage.onclick = function () {
             mainHead.style.display = 'block'
@@ -129,13 +176,43 @@ const app = {
         }
     },
 
+    //cập nhật trạng thái của bài hát đang phát trên thanh
+    loadCurrentSong: function () {
+        titleCurrentSong.textContent = this.currentSong.name
+        artistCurrentSong.textContent = this.currentSong.artist
+        imgCurrentSong.src = this.currentSong.img
+        audioCurrentSong.src = this.currentSong.path
+    },
+
+    //chuyển bài tiếp theo
+    loadNextSong: function() {
+        this.currentIndex ++ 
+        if (this.currentIndex >= this.allSongs.length) {
+            this.currentIndex = 0
+        }
+        this.loadCurrentSong()
+    },
+
+    //quay lại bài trước đó    
+    loadPreviousSong: function() {
+        this.currentIndex --
+        if (this.currentIndex < 0) {
+            this.currentIndex = this.allSongs.length - 1
+        }
+        this.loadCurrentSong()
+    },
+
+    //random bất kỳ một bài nào đó
+    loadRandomSong: function() {
+        let randomIndex
+        do {
+            randomIndex = Math.floor(Math.random() * this.allSongs.length)
+        }
+        while(randomIndex === this.currentIndex)
+        this.currentIndex = randomIndex
+        this.loadCurrentSong()
+    },
     //Xử lí các sự kiện handle
-
-
-
-
-
-
 
     getScreenClickList: function (index) {
         const list = allPlaylists[index]
@@ -150,17 +227,10 @@ const app = {
         `
     },
 
-    loadCurrentSong: function () {
-        titleCurrentSong.textContent = this.currentSong.name
-        artistCurrentSong.textContent = this.currentSong.artist
-        imgCurrentSong.src = this.currentSong.img
-        audioCurrentSong.src = this.currentSong.path
-    },
-
     start: function () {
         //Định nghĩa các thuộc tính cho Object
         this.defineproperties()
-
+        
         //Lắng nghe xử lí sự kiện cho DOM
         this.handleEvent()
 

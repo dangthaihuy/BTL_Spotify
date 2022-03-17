@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
-    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -57,14 +57,14 @@
                     <!-- <img id='action__nextpage' src="./assets/img/top-container/action.PNG" alt=""
                         style="transform: rotate(180deg);"> -->
                 </div>
-                <div id="head-right" class="mainhead-item dis-flex-row" style="width: 98px;">
+                <div id="head-right" class="mainhead-item dis-flex-row">
                     <img src="./assets/img/main/user-avatar.jpg" alt=""
                         style="width: 26px; height: 26px; border-radius: 50%;">
-                    <p>Team12</p>
-                    <i class="ti-angle-down"></i>
+                    <p>Team 12</p>
+                    <i class="fa-solid fa-caret-down"></i>
                 </div>
             </div>
-            <div id="main-head" style="display: block;">
+            <div id="main-head">
                 <div id="mainhead-content">
                     <h1>Good morning</h1>
                     <div id="mainhead-conlist">
@@ -233,7 +233,7 @@
                 </div>
             </div>
 
-            <div class="main-openplaylist" style="display: none;">
+            <div class="main-openplaylist">
                 <div class="main-openplaylist-header"
                     style="background-image: linear-gradient(rgb(193, 193, 193), rgb(24, 24, 24) 600px);">
 
@@ -374,18 +374,18 @@
             <div class="playing-control">
                 <div class="playing-control__buttons">
                     <div class="shuffle">
-                        <img class="shuffle__img" src="./assets/img/now-playing/shuffle-active.PNG" alt="">
-                        <img class="shuffle__active" src="./assets/img/now-playing/active-dot.png" alt="">
+                        <i class="fa-solid fa-shuffle shuffle__img"></i>
+                        <div class="dot_below shuffle__active"></div>
                     </div>
-                    <img src="./assets/img/now-playing/prev.png" alt="" class="playing-control__buttons-prev">
+                    <i class="fa-solid fa-backward-step playing-control__buttons-prev"></i>
                     <div class="playing-control__buttons-playpause">
-                        <img src="./assets/img/now-playing/play.PNG" alt="" class="playing-control__buttons-play">
-                        <img src="./assets/img/now-playing/pause.PNG" alt="" class="playing-control__buttons-pause">
+                        <i class="fa-solid fa-circle-play playing-control__buttons-play"></i>
+                        <i class="fa-solid fa-circle-pause playing-control__buttons-pause"></i>
                     </div>
-                    <img src="./assets/img/now-playing/next.PNG" alt="" class="playing-control__buttons-next">
+                    <i class="fa-solid fa-forward-step playing-control__buttons-next"></i>
                     <div class="repeat">
-                        <img class="repeat__img" src="./assets/img/now-playing/repeat.PNG" alt="">
-                        <img class="repeat__active" src="./assets/img/now-playing/active-dot.png" alt="">
+                        <i class="fa-solid fa-repeat repeat__img"></i>
+                        <div class="dot_below repeat__active"></div>
                     </div>
                 </div>
                 <div class="playing-control__playback">
