@@ -145,7 +145,11 @@
 
 #head-right {
     background-color: #000;
+    border-radius: 14px;
+    padding: 2px;
 }
+
+
 
 #mainhead-fixed {
     z-index: 5;
@@ -386,35 +390,68 @@
     height: 36px;
 }
 
-/* .main-openplaylist-body__table-header::after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    background-color: rgb(179, 179, 179);
-    width: 100%;
-    top: 20px;
-} */
+.main-openplaylist-body__table-body {
+    color: rgb(179, 179, 179);
+    display: flex;
+    padding: 0 16px;
+    align-items: center;
+    margin-top: 16px;
+    font-size: 1.4rem;
+    
+}
 
-#number {
+.number {
     flex: 1;
 }
 
-#title {
+.title {
     flex: 10;
+    display: flex;
+    align-items: center;
 
 }
 
-#album {
+.title > img {
+    width: 40px;
+    margin-right: 16px;
+}
+
+.title-info {
+
+}
+
+.title-info__name {
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.title-info__artist {
+    font-size: 1.4rem;
+
+}
+
+
+.album {
     flex: 8;
 
 }
 
-#time {
+.more {
     flex: 2;
+    display: flex; 
+    align-items: center;
+}
+
+.more__favourite {
     
 }
 
-#time > img {
+.more__time {
+    flex: 1;
+    margin-left: -4px;
+}
+
+.more > img {
     width: 16px;
     
 }
