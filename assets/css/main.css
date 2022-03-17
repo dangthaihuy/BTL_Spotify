@@ -141,6 +141,7 @@
     background-image: linear-gradient(rgba(13, 54, 75, 0.35), #000);
     padding: 0 24px;
     padding-top: 30px;
+    display: none;
 }
 
 #head-right {
@@ -148,8 +149,6 @@
     border-radius: 14px;
     padding: 2px;
 }
-
-
 
 #mainhead-fixed {
     z-index: 5;
@@ -243,6 +242,7 @@
     background-color: #000;
     padding: 0 24px;
     padding-top: 36px;
+    display: none;
 }
 
 #main-body .body-nav-list {
@@ -390,7 +390,7 @@
     height: 36px;
 }
 
-.main-openplaylist-body__table-body {
+.main-openplaylist-body__table-item {
     color: rgb(179, 179, 179);
     display: flex;
     padding: 0 16px;
@@ -417,7 +417,9 @@
 }
 
 .title-info {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .title-info__name {
@@ -427,13 +429,11 @@
 
 .title-info__artist {
     font-size: 1.4rem;
-
 }
 
 
 .album {
     flex: 8;
-
 }
 
 .more {
@@ -614,6 +614,7 @@
 
 .playing-song-img {
     width: 56px;
+    border-radius: 50%;
 }
 
 .playing-song-content {
@@ -679,16 +680,28 @@
 .playing-control__buttons-prev {
     width: 10px;
     margin: 0 12px;
-
 }
 
 .playing-control__buttons-playpause {
+    position: relative;
+}
+.playing-control__buttons-play,
+.playing-control__buttons-pause {
     width: 34px;
     margin: 0 12px;
-
-
 }
 
+.playing-control__buttons-pause {
+    display: none;
+}
+
+.playing-control__buttons-playpause.playing .playing-control__buttons-pause {
+    display: inline-block;
+}
+
+.playing-control__buttons-playpause.playing .playing-control__buttons-play {
+    display: none;
+}
 .playing-control__buttons-next {
     width: 10px;
     margin: 0 12px;

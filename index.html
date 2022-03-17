@@ -63,7 +63,7 @@
                     <i class="ti-angle-down"></i>
                 </div>
             </div>
-            <!-- <div id="main-head">
+            <div id="main-head">
 
                 <div id="mainhead-content">
                     <h1>Good morning</h1>
@@ -115,8 +115,8 @@
                         </ul>
                     </div>
                 </div>
-            </div> -->
-            <!-- <div id="main-body">
+            </div>
+            <div id="main-body">
                 <div class="body-nav-list">
                     <h1>Made for you</h1>
                     <div class="body-play-list">
@@ -272,7 +272,7 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <div class="main-openplaylist">
                 <div class="main-openplaylist-header"
                     style="background-image: linear-gradient(rgb(193, 193, 193), rgb(24, 24, 24) 600px);">
@@ -301,21 +301,23 @@
                             </div>
                         </div>
                         <div class="main-openplaylist-body__table-body">
-                            <div class="number">1</div>
-                            <div class="title">
-                                <img src="./data/albums/cloud-nine__kygo.jpg" alt="" class="title-img">
-                                <div class="title-info">
-                                    <div class="title-info__name">Firestone</div>
-                                    <div class="title-info__artist">Kygo, Conrad Sewell</div>
+                            <!-- <div class="main-openplaylist-body__table-item">
+                                <div class="number">1</div>
+                                <div class="title">
+                                    <img src="./data/albums/cloud-nine__kygo.jpg" alt="" class="title-img">
+                                    <div class="title-info">
+                                        <div class="title-info__name">Firestone</div>
+                                        <div class="title-info__artist">Kygo, Conrad Sewell</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="album">Cloud Nine</div>
-                            <div class="more">
-                                <span class="more__time">4:45</span>
-                                <img src="./assets/img/now-playing/favorite.png" alt="" class="more__favourite">
-
-                            </div>
+                                <div class="album">Cloud Nine</div>
+                                <div class="more">
+                                    <span class="more__time">4:45</span>
+                                    <img src="./assets/img/now-playing/favorite.png" alt="" class="more__favourite">
+                                </div>
+                            </div> -->
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -422,17 +424,19 @@
                         <img class="shuffle__active" src="./assets/img/now-playing/active-dot.png" alt="">
                     </div>
                     <img src="./assets/img/now-playing/prev.png" alt="" class="playing-control__buttons-prev">
-                    <img src="./assets/img/now-playing/play.PNG" alt="" class="playing-control__buttons-playpause">
+                    <div class="playing-control__buttons-playpause">
+                        <img src="./assets/img/now-playing/play.PNG" alt="" class="playing-control__buttons-play">
+                        <img src="./assets/img/now-playing/pause.PNG" alt="" class="playing-control__buttons-pause">
+                    </div>
                     <img src="./assets/img/now-playing/next.PNG" alt="" class="playing-control__buttons-next">
                     <div class="repeat">
                         <img class="repeat__img" src="./assets/img/now-playing/repeat.PNG" alt="">
                         <img class="repeat__active" src="./assets/img/now-playing/active-dot.png" alt="">
-
                     </div>
                 </div>
                 <div class="playing-control__playback">
                     <div class="playing-control__playback__timeplayed">1:41</div>
-                    <input type="range" class="playing-control__playback__slider">
+                    <input type="range" class="playing-control__playback__slider" value="0" step="1" min="0" max="100">
                     <div class="playing-control__playback__timetotal">3:40</div>
 
                 </div>
