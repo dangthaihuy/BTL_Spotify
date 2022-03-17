@@ -1,3 +1,6 @@
+const mainHeaderConNav = document.querySelector('#mainhead-connav')
+
+
 export const allSongs = [
     {
         id: 1,
@@ -851,4 +854,90 @@ export const allSongs = [
     },
 ]
 
+const allPlaylists = [
+    {
+        id: 1,
+        name: "Liked Songs",
+        description: '',
+        owner: "Phuc",
+        img: "./data/playlists/own-playlists/liked-songs.jpg",
+        songs: allSongs.filter(song => song.tag.includes('favorite')),
+        backgroundColor: '74, 53, 144',
+        headerColor: '32, 22, 64',
+        tag: ['own playlist', 'liked songs']
+    },
+    {
+        id: 2,
+        name: "All Time Low",
+        description: '',
+        owner: "Phuc",
+        img: "./data/playlists/own-playlists/all-time-low.jpg",
+        songs: allSongs.filter(song => song.artist.includes('All Time Low')),
+        backgroundColor: '142, 128, 86',
+        headerColor: '64, 58, 38',
+        tag: ['own playlist',]
+    },
+    {
+        id: 3,
+        name: "I Built This Playlist On Rock And Roll",
+        description: 'Most of these songs are come from Lost Santos Rock Radio',
+        owner: "Phuc",
+        img: "./data/playlists/own-playlists/i-built-this-playlist-on-rock-and-roll.jpg",
+        songs: allSongs.filter(song => song.tag.includes('rock')),
+        backgroundColor: '42, 102, 80',
+        headerColor: '16, 42, 32',
+        tag: ['own playlist',]
+    },
+    {
+        id: 4,
+        name: "Jonas Brothers",
+        description: '',
+        owner: "Phuc",
+        img: "./data/playlists/own-playlists/jonas-brothers.jpg",
+        songs: allSongs.filter(song => song.artist.includes('Jonas Brothers') || song.artist.includes('DNCE')),
+        backgroundColor: '180, 200, 200',
+        headerColor: '80, 90, 90',
+        tag: ['own playlist',]
+    },
+    {
+        id: 5,
+        name: "Martin Garrix",
+        description: '',
+        owner: "Phuc",
+        img: "./data/playlists/own-playlists/martin-garrix.jpg",
+        songs: allSongs.filter(song => song.artist.includes('Martin Garrix')),
+        backgroundColor: '13, 54, 75',
+        headerColor: '3, 22, 32',
+        tag: ['own playlist',]
+    },
+    {
+        id: 6,
+        name: "Jonas Blue",
+        description: '',
+        owner: "Phuc",
+        img: "./data/playlists/own-playlists/jonas-blue.jpg",
+        songs: allSongs.filter(song => song.artist.includes('Jonas Blue')),
+        backgroundColor: '3, 24, 60',
+        headerColor: '0, 10, 26',
+        tag: ['own playlist',]
+    },
+]
 
+renderPlaylist(allPlaylists)
+
+function renderPlaylist(array) {
+    const playLists = allPlaylists.map(list => {
+        return `
+        <li class="dis-flex-row">
+            <img src=${list.img} class="list-img" alt="">
+            <div class="head-navin4 dis-flex-row">
+                <h2 class="nav-namenav-name">${list.name}</h2>
+                <img src="./assets/img/main/headnav/play-now.png" class="nav-play hide" alt="">
+            </div>
+        </li>
+        `
+    })
+    mainHeaderConNav.innerHTML = playLists.join('')
+
+
+}
