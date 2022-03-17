@@ -53,8 +53,9 @@
         <div class="root__main" id="root__main">
             <div id="mainhead-fixed" class="dis-flex-row">
                 <div class="mainhead-item dis-flex-row" style="width: 84px;">
-                    <img src="./assets/img/top-container/action.PNG" alt="">
-                    <img src="./assets/img/top-container/action.PNG" alt="" style="transform: rotate(180deg);">
+                    <img id='action__prevpage' src="./assets/img/top-container/action.PNG" alt="">
+                    <!-- <img id='action__nextpage' src="./assets/img/top-container/action.PNG" alt=""
+                        style="transform: rotate(180deg);"> -->
                 </div>
                 <div id="head-right" class="mainhead-item dis-flex-row" style="width: 98px;">
                     <img src="./assets/img/main/user-avatar.jpg" alt=""
@@ -63,12 +64,12 @@
                     <i class="ti-angle-down"></i>
                 </div>
             </div>
-            <div id="main-head">
+            <div id="main-head" style="display: block;">
                 <div id="mainhead-content">
                     <h1>Good morning</h1>
                     <div id="mainhead-conlist">
                         <ul id="mainhead-connav">
-                            
+
                         </ul>
                     </div>
                 </div>
@@ -155,16 +156,17 @@
                         </div>
                     </div>
                 </div>
-            
+
                 <div class="body-nav-list">
                     <h1>Recently played</h1>
                     <div class="body-play-list">
-                        
+
                         <div class="body-playlist-item">
                             <img src="./assets/img/main/headnav/play-now.png" alt="" class="body-list-play hide">
                             <img src="./assets/img/main/rp/Vicetone.jfif" alt="">
                             <a href="#" class="body-playlist-item-header font-16">Daily Mixes 1</a>
-                            <a href="#" class="font-14" style="margin-top: 4px;">Vicetone, John De Sohn, Martin Jensen and more</a>
+                            <a href="#" class="font-14" style="margin-top: 4px;">Vicetone, John De Sohn, Martin Jensen
+                                and more</a>
                         </div>
                         <div class="body-playlist-item">
                             <img src="./assets/img/main/headnav/play-now.png" alt="" class="body-list-play hide">
@@ -196,7 +198,7 @@
                 <div class="body-nav-list">
                     <h1>Your playlist</h1>
                     <div class="body-play-list">
-                        
+
                         <div class="body-playlist-item">
                             <img src="./assets/img/main/headnav/play-now.png" alt="" class="body-list-play hide">
                             <img src="./assets/img/main/yp/kygo.jpg" alt="">
@@ -230,16 +232,11 @@
                     </div>
                 </div>
             </div>
-            <div class="main-openplaylist">
+
+            <div class="main-openplaylist" style="display: none;">
                 <div class="main-openplaylist-header"
                     style="background-image: linear-gradient(rgb(193, 193, 193), rgb(24, 24, 24) 600px);">
-                    <img src="./data/playlists/own-playlists/kygo.jpg" alt="">
-                    <div class="main-openplaylist-header__title">
-                        <div class="main-openplaylist-header__title__type">playlist</div>
-                        <div class="main-openplaylist-header__title__name">Kygo</div>
-                        <div class="main-openplaylist-header__title__descriptione"></div>
-                        <div class="main-openplaylist-header__title__info">• 7 songs</div>
-                    </div>
+
                 </div>
                 <div class="main-openplaylist-body">
                     <div class="main-openplaylist-body__btns">
@@ -258,7 +255,7 @@
                             </div>
                         </div>
                         <div class="main-openplaylist-body__table-body">
-                            <!-- <div class="main-openplaylist-body__table-item">
+                            <div class="main-openplaylist-body__table-item">
                                 <div class="number">1</div>
                                 <div class="title">
                                     <img src="./data/albums/cloud-nine__kygo.jpg" alt="" class="title-img">
@@ -272,9 +269,9 @@
                                     <span class="more__time">4:45</span>
                                     <img src="./assets/img/now-playing/favorite.png" alt="" class="more__favourite">
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

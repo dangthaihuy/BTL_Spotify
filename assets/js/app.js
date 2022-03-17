@@ -1,14 +1,20 @@
-import { allSongs } from "./database.js";
+import { allSongs, allPlaylists } from "./database.js";
 
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
+const helloList = $('#mainhead-connav')
+const mainHead = $('#main-head')
+const mainOpenPlayList = $('.main-openplaylist')
+const mainOpenPlayListHeader = $('.main-openplaylist-header')
+const actionePrevPage = $('#action__prevpage')
 const titleCurrentSong = $('.playing-song-content-info-name')
 const artistCurrentSong = $('.playing-song-content-info-artist')
 const imgCurrentSong = $('.playing-song-img')
 const audioCurrentSong = $('#audio')
 const processCurrentSong = $('.playing-control__playback__slider')
 const playBtn = $('.playing-control__buttons-playpause')
+
 const app = {
     allSongs,
     currentIndex: 0,
@@ -24,9 +30,14 @@ const app = {
             }
         })
     },
-    
+
     //render list nhạc
     render: function () {
+
+        //code của quỳnh
+
+
+
         const htmls = this.allSongs.map(song => {
             return `<div class="main-openplaylist-body__table-item">
                 <div class="number">1</div>
@@ -65,7 +76,8 @@ const app = {
         imgAnimate.pause()
 
         //Xử lý khi click play
-        playBtn.onclick = function() {
+        playBtn.onclick = function () {
+            console.log(1);
             if (_this.isPlay) {
                 audioCurrentSong.pause()
             }
@@ -75,21 +87,21 @@ const app = {
         }
 
         //song play
-        audioCurrentSong.onplay = function() {
+        audioCurrentSong.onplay = function () {
             _this.isPlay = true
             playBtn.classList.add('playing')
             imgAnimate.play()
         }
 
         //song pause
-        audioCurrentSong.onpause = function() {
+        audioCurrentSong.onpause = function () {
             _this.isPlay = false
             playBtn.classList.remove('playing')
             imgAnimate.pause()
         }
 
         //tiến độ thay đổi
-        audioCurrentSong.ontimeupdate = function() {
+        audioCurrentSong.ontimeupdate = function () {
             if (audioCurrentSong.duration) {
                 const processPercent = Math.floor(audioCurrentSong.currentTime / audioCurrentSong.duration * 100)
                 processCurrentSong.value = processPercent
@@ -97,13 +109,48 @@ const app = {
         }
 
         // khi tua xong
-        processCurrentSong.onchange = function(e) {
+        processCurrentSong.onchange = function (e) {
             const seekTime = e.target.value * audioCurrentSong.duration / 100
             audioCurrentSong.currentTime = seekTime
+        },
+            helloList.onclick = function (e) {
+                const listClick = e.target.closest('.mainhead-connav-item')
+                if (listClick) {
+                    mainHead.style.display = 'none'
+                    mainOpenPlayList.style.display = 'block'
+                    _this.getScreenClickList(listClick.getAttribute('id-list'));
+                }
+            }
+
+        actionePrevPage.onclick = function () {
+            mainHead.style.display = 'block'
+            mainOpenPlayList.style.display = 'none'
+
         }
     },
 
-    loadCurrentSong: function() {
+    //Xử lí các sự kiện handle
+
+
+
+
+
+
+
+    getScreenClickList: function (index) {
+        const list = allPlaylists[index]
+        mainOpenPlayListHeader.innerHTML = `
+        <img src="${list.img}" alt="">
+        <div class="main-openplaylist-header__title">
+            <div class="main-openplaylist-header__title__type">playlist</div>
+            <div class="main-openplaylist-header__title__name">${list.name}</div>
+            <div class="main-openplaylist-header__title__descriptione"></div>
+            <div class="main-openplaylist-header__title__info">• ${list.songs.length} songs</div>
+        </div>
+        `
+    },
+
+    loadCurrentSong: function () {
         titleCurrentSong.textContent = this.currentSong.name
         artistCurrentSong.textContent = this.currentSong.artist
         imgCurrentSong.src = this.currentSong.img
