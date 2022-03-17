@@ -1,3 +1,6 @@
+const mainHeaderConNav = document.querySelector('#mainhead-connav')
+
+
 export const allSongs = [
     {
         id: 1,
