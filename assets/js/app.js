@@ -3,12 +3,14 @@ import { allSongs, allPlaylists } from "./database.js";
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
+//HUY
 const helloList = $('#mainhead-connav')
 const mainHead = $('#main-head')
 const mainOpenPlayList = $('.main-openplaylist')
 const mainOpenPlayListHeader = $('.main-openplaylist-header')
 const actionePrevPage = $('#action__prevpage')
-
+//===========================================================
+//QUYNH
 const titleCurrentSong = $('.playing-song-content-info-name')
 const artistCurrentSong = $('.playing-song-content-info-artist')
 const imgCurrentSong = $('.playing-song-img')
@@ -20,8 +22,9 @@ const previousBtn = $('.playing-control__buttons-prev')
 const nextBtn = $('.playing-control__buttons-next')
 const shuffleBtn = $('.shuffle')
 const repeatBtn = $('.repeat')
-
+//=============================================================
 const app = {
+    //QUYNH
     allSongs,
     currentIndex: 0,
     isPlay: false,
@@ -160,6 +163,7 @@ const app = {
         }
 
         //====
+        //HUY
         helloList.onclick = function (e) {
             const listClick = e.target.closest('.mainhead-connav-item')
             if (listClick) {
@@ -212,6 +216,9 @@ const app = {
         this.currentIndex = randomIndex
         this.loadCurrentSong()
     },
+
+    //==========================================================
+    //HUY
     //Xử lí các sự kiện handle
 
     getScreenClickList: function (index) {
@@ -227,7 +234,10 @@ const app = {
         `
     },
 
+    //========================================================
+   
     start: function () {
+         //QUYNH
         //Định nghĩa các thuộc tính cho Object
         this.defineproperties()
         
@@ -239,6 +249,7 @@ const app = {
 
         //render list nhạc
         this.render()
+        //=======================================================
     },
 }
 
