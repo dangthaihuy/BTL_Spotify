@@ -9,6 +9,7 @@ const mainHead = $('#main-head')
 const mainOpenPlayList = $('.main-openplaylist')
 const mainOpenPlayListHeader = $('.main-openplaylist-header')
 const actionePrevPage = $('#action__prevpage')
+const playAlbumBtn = $('.main-openplaylist-body__btns-play')
 //===========================================================
 //QUYNH
 const titleCurrentSong = $('.playing-song-content-info-name')
@@ -25,7 +26,7 @@ const repeatBtn = $('.repeat')
 //=============================================================
 const app = {
     //QUYNH
-    allSongs,
+    listSong: [...allSongs],
     currentIndex: 0,
     isPlay: false,
     isRandom: false,
@@ -35,16 +36,17 @@ const app = {
     defineproperties: function () {
         Object.defineProperty(this, 'currentSong', {
             get: function () {
-                return this.allSongs[this.currentIndex]
+                return this.listSong[this.currentIndex]
             }
         })
     },
 
     //render list nhạc
     render: function () {
-        const htmls = this.allSongs.map((song, index) => {
-            return `<div class="main-openplaylist-body__table-item ${index == this.currentIndex ? 'active': ''}">
-                <div class="number">1</div>
+
+        const htmls = this.listSong.map((song, index) => {
+            return `<div class="main-openplaylist-body__table-item ${index == this.currentIndex ? 'active' : ''}">
+                <div class="number">${index + 1}</div>
                 <div class="title">
                     <img src="${song.img}" alt="" class="title-img">
                     <div class="title-info">
@@ -81,13 +83,19 @@ const app = {
 
         //Xử lý khi click play
         playBtn.onclick = function () {
-            console.log(1);
             if (_this.isPlay) {
                 audioCurrentSong.pause()
             }
             else {
                 audioCurrentSong.play()
             }
+        }
+
+        playAlbumBtn.onclick = function () {
+            _this.currentIndex = 0
+            _this.render()
+            _this.loadCurrentSong()
+            audioCurrentSong.play()
         }
 
         //song play
@@ -123,7 +131,7 @@ const app = {
             if (_this.isRandom) {
                 _this.loadRandomSong()
             } else {
-                _this.loadPreviousSong()  
+                _this.loadPreviousSong()
             }
             audioCurrentSong.play()
             _this.render()
@@ -134,7 +142,7 @@ const app = {
             if (_this.isRandom) {
                 _this.loadRandomSong()
             } else {
-                _this.loadNextSong()  
+                _this.loadNextSong()
             }
             audioCurrentSong.play()
             _this.render()
@@ -170,6 +178,8 @@ const app = {
                 mainHead.style.display = 'none'
                 mainOpenPlayList.style.display = 'block'
                 _this.getScreenClickList(listClick.getAttribute('id-list'));
+                _this.addSongsToList(allPlaylists[listClick.getAttribute('id-list')].songs)
+                _this.render()
             }
         }
 
@@ -182,37 +192,37 @@ const app = {
 
     //cập nhật trạng thái của bài hát đang phát trên thanh
     loadCurrentSong: function () {
-        titleCurrentSong.textContent = this.currentSong.name
-        artistCurrentSong.textContent = this.currentSong.artist
-        imgCurrentSong.src = this.currentSong.img
-        audioCurrentSong.src = this.currentSong.path
+        titleCurrentSong.textContent = this.listSong[this.currentIndex].name
+        artistCurrentSong.textContent = this.listSong[this.currentIndex].artist
+        imgCurrentSong.src = this.listSong[this.currentIndex].img
+        audioCurrentSong.src = this.listSong[this.currentIndex].path
     },
 
     //chuyển bài tiếp theo
-    loadNextSong: function() {
-        this.currentIndex ++ 
-        if (this.currentIndex >= this.allSongs.length) {
+    loadNextSong: function () {
+        this.currentIndex++
+        if (this.currentIndex >= this.listSong.length) {
             this.currentIndex = 0
         }
         this.loadCurrentSong()
     },
 
     //quay lại bài trước đó    
-    loadPreviousSong: function() {
-        this.currentIndex --
+    loadPreviousSong: function () {
+        this.currentIndex--
         if (this.currentIndex < 0) {
-            this.currentIndex = this.allSongs.length - 1
+            this.currentIndex = this.listSong.length - 1
         }
         this.loadCurrentSong()
     },
 
     //random bất kỳ một bài nào đó
-    loadRandomSong: function() {
+    loadRandomSong: function () {
         let randomIndex
         do {
-            randomIndex = Math.floor(Math.random() * this.allSongs.length)
+            randomIndex = Math.floor(Math.random() * this.listSong.length)
         }
-        while(randomIndex === this.currentIndex)
+        while (randomIndex === this.currentIndex)
         this.currentIndex = randomIndex
         this.loadCurrentSong()
     },
@@ -234,13 +244,17 @@ const app = {
         `
     },
 
+    addSongsToList: function (data) {
+        this.listSong = data
+    },
+
     //========================================================
-   
+
     start: function () {
-         //QUYNH
-        //Định nghĩa các thuộc tính cho Object
-        this.defineproperties()
-        
+        //QUYNH
+        // Định nghĩa các thuộc tính cho Object
+        // this.defineproperties()
+
         //Lắng nghe xử lí sự kiện cho DOM
         this.handleEvent()
 
@@ -248,7 +262,6 @@ const app = {
         this.loadCurrentSong()
 
         //render list nhạc
-        this.render()
         //=======================================================
     },
 }

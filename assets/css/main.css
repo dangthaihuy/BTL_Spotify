@@ -264,7 +264,6 @@
     background-color: #000;
     padding: 0 24px;
     padding-top: 36px;
-    display: none;
 }
 
 #main-body .body-nav-list {
@@ -378,7 +377,7 @@
 }
 
 .main-openplaylist-body {
-
+    
 }
 
 .main-openplaylist-body__btns {
@@ -647,6 +646,9 @@
 
 .playing-song {
     display: flex;
+    
+    min-width: 300px;
+    
 }
 
 .playing-song-img {
@@ -661,8 +663,9 @@
 
 .playing-song-content-info {
     color: var(--white-color);
-    
     margin: 0 14px;
+    max-width: 130px;
+    overflow: hidden;
 }
 .playing-song-content-info-name {
     line-height: 22px;
@@ -673,6 +676,7 @@
 .playing-song-content-info-artist {
     font-size: 1.1rem;
     color: #afafaf;
+    
 }
 
 .playing-song-content-favourite {
