@@ -256,8 +256,7 @@
 }
 
 #mainhead-connav .nav-play:hover {
-    width: 44px;
-    height: 44px;
+    transform: scale(1.1);
 }
 
 #main-body {
@@ -389,7 +388,13 @@
 .main-openplaylist-body__btns-play {
     width: 56px;
     margin-right: 32px;
+    cursor: pointer;
+    transition: all linear 0.2s;
+}
 
+.main-openplaylist-body__btns-play:hover {
+    
+    transform: scale(1.1);
 }
 
 .main-openplaylist-body__btns-more {
@@ -422,7 +427,7 @@
 }
 
 .main-openplaylist-body__table-item:hover {
-    background-color: rgba(133,133,133,0.9);
+    background-color: rgba(133,133,133,0.2);
 }
 
 .main-openplaylist-body__table-item.active {
@@ -778,6 +783,7 @@ i.playing-control__buttons-pause {
 }
 
 .playing-control__playback__timeplayed {
+    font-size: 1.2rem;
     color: rgb(179, 179, 179);
 }
 
@@ -794,6 +800,8 @@ i.playing-control__buttons-pause {
 }
 
 .playing-control__playback__timetotal {
+    font-size: 1.2rem;
+
     color: rgb(179, 179, 179);
 }
 

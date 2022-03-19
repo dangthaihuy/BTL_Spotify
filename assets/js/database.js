@@ -1,5 +1,9 @@
-const mainHeaderConNav = document.querySelector('#mainhead-connav')
+const $ = document.querySelector.bind(document)
+const $$ = document.querySelectorAll.bind(document)
 
+
+const mainHeaderConNav = $('#mainhead-connav')
+const rightUsers = $('.right-users')
 
 export const allSongs = [
     {
@@ -921,10 +925,34 @@ export const allPlaylists = [
         headerColor: '0, 10, 26',
         tag: ['own playlist',]
     },
+]
 
+export const allUsers = [
+    {
+        id: 1,
+        name: "Donal Trump",
+        avatarPath: './assets/img/user/donal-trump.jfif',
+        latestSongID: '83',
+        lastActive: 'online',
+    },
+    {
+        id: 2,
+        name: "Dev Nguyen",
+        avatarPath: './assets/img/user/dev-nguyen.jpg',
+        latestSongID: '84',
+        lastActive: '10h',
+    },
+    {
+        id: 3,
+        name: "A Tu",
+        avatarPath: './assets/img/user/atu.jpg',
+        latestSongID: '85',
+        lastActive: '1d',
+    }
 ]
 
 renderPlaylist(allPlaylists)
+renderUsers(allUsers)
 
 function renderPlaylist(array) {
     const playLists = allPlaylists.map((list, id) => {
@@ -939,4 +967,37 @@ function renderPlaylist(array) {
         `
     })
     mainHeaderConNav.innerHTML = playLists.join('')
+}
+function renderUsers(users) {
+    const usersList = users.map(user => {
+        const song = allSongs[user.latestSongID - 1]
+
+        return `
+        <div class="right-user">
+            <div class="right-user-avatar">
+                <img src="${user.avatarPath}" alt="">
+            </div>
+            <div class="right-user-content">
+                <div class="right-user-content-nameactive">
+                    <span>${user.name}</span>
+                    <div>
+                        <img src="./assets/img/right-sidebar/listening.png" alt="">
+                    </div>
+                </div>
+                <div class="right-user-content-music">
+                    <div class="right-user-content-music-song">
+                        <span class="right-user-content-music-song__name">${song.name}</span>
+                        <img src="./assets/img/right-sidebar/dot.png" alt="">
+                        <span class="right-user-content-music-song__artist">${song.artist}</span>
+                    </div>
+                    <div class="right-user-content-music-owner">
+                        <img src="./assets/img/right-sidebar/playlist.png" alt="">
+                        <span>${song.album}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `
+    })
+    rightUsers.innerHTML = usersList.join('')
 }
