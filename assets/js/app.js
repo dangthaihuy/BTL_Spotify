@@ -10,6 +10,8 @@ const mainOpenPlayList = $('.main-openplaylist')
 const mainOpenPlayListHeader = $('.main-openplaylist-header')
 const actionePrevPage = $('#action__prevpage')
 const playAlbumBtn = $('.main-openplaylist-body__btns-play')
+const timeSongNow = $('.playing-control__playback__timeplayed')
+const timeTotalSongNow = $('.playing-control__playback__timetotal')
 //===========================================================
 //QUYNH
 const titleCurrentSong = $('.playing-song-content-info-name')
@@ -112,11 +114,13 @@ const app = {
             imgAnimate.pause()
         }
 
+
         //tiến độ thay đổi
         audioCurrentSong.ontimeupdate = function () {
             if (audioCurrentSong.duration) {
                 const processPercent = Math.floor(audioCurrentSong.currentTime / audioCurrentSong.duration * 100)
                 processCurrentSong.value = processPercent
+                _this.handleTimePlayed()
             }
         }
 
@@ -124,6 +128,7 @@ const app = {
         processCurrentSong.onchange = function (e) {
             const seekTime = e.target.value * audioCurrentSong.duration / 100
             audioCurrentSong.currentTime = seekTime
+            console.log(seekTime);
         }
 
         // preview song
@@ -196,7 +201,10 @@ const app = {
         artistCurrentSong.textContent = this.listSong[this.currentIndex].artist
         imgCurrentSong.src = this.listSong[this.currentIndex].img
         audioCurrentSong.src = this.listSong[this.currentIndex].path
+
     },
+
+
 
     //chuyển bài tiếp theo
     loadNextSong: function () {
@@ -248,6 +256,21 @@ const app = {
         this.listSong = data
     },
 
+    handleTimePlayed: function (value = Math.round(audio.currentTime)) {
+        let currentMinute = Math.floor(value / 60)
+        let currentSecond = value - currentMinute * 60
+        currentSecond < 10 ? timeSongNow.innerHTML = `${currentMinute}:0${currentSecond}` : timeSongNow.innerHTML = `${currentMinute}:${currentSecond}`
+
+    },
+
+    handleTotalTimeSong: function () {
+        audioCurrentSong.onloadedmetadata = function () {
+            const totalTimeSong = Math.round(audioCurrentSong.duration)
+            const totalMinute = Math.floor(totalTimeSong / 60)
+            const totalSecond = totalTimeSong - totalMinute * 60
+            totalSecond < 10 ? timeTotalSongNow.innerHTML = `${totalMinute}:0${totalSecond}` : timeTotalSongNow.innerHTML = `${totalMinute}:${totalSecond}`
+        }
+    },
     //========================================================
 
     start: function () {
@@ -261,8 +284,8 @@ const app = {
         //Load bài hát hiện tại ra màn hình audio
         this.loadCurrentSong()
 
-        //render list nhạc
-        //=======================================================
+        // Load thời lượng bài hát
+        this.handleTotalTimeSong()
     },
 }
 
