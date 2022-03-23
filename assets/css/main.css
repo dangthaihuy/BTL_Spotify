@@ -827,10 +827,23 @@ i.playing-control__buttons-pause {
 }
 
 .playing-mediacontrol__volumebar-btn {
-    width: 16px;
+    color: var(--white-color);
+    font-size: 16px;
     margin: 8px;
-
 }
+
+i.playing-mediacontrol__volumebar-btn__off {
+    display: none;
+}
+
+.playing-mediacontrol__volumebar-btn.mute .playing-mediacontrol__volumebar-btn__off {
+    display: block;
+}
+
+.playing-mediacontrol__volumebar-btn.mute .playing-mediacontrol__volumebar-btn__on {
+    display: none;
+}
+
 
 .playing-mediacontrol__volumebar-range {
     height: 4px;

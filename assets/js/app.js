@@ -25,6 +25,9 @@ const previousBtn = $('.playing-control__buttons-prev')
 const nextBtn = $('.playing-control__buttons-next')
 const shuffleBtn = $('.shuffle')
 const repeatBtn = $('.repeat')
+
+const volumeBtn = $('.playing-mediacontrol__volumebar-btn')
+const volumeBar = $('.playing-mediacontrol__volumebar-range')
 //=============================================================
 const app = {
     //QUYNH
@@ -33,6 +36,7 @@ const app = {
     isPlay: false,
     isRandom: false,
     isRepeat: false,
+    isMute: false,
 
     //định nghĩa
     defineproperties: function () {
@@ -113,8 +117,7 @@ const app = {
             playBtn.classList.remove('playing')
             imgAnimate.pause()
         }
-
-
+        
         //tiến độ thay đổi
         audioCurrentSong.ontimeupdate = function () {
             if (audioCurrentSong.duration) {
@@ -175,6 +178,17 @@ const app = {
             }
         }
 
+        // volume on/off
+        volumeBtn.onclick = function () {
+            _this.isMute = !_this.isMute
+            volumeBtn.classList.toggle('mute', _this.isMute)
+            if (_this.isMute) {
+                volumeBar.value = "0"
+                audioCurrentSong.muted = true
+            } else {
+                audioCurrentSong.muted = false
+            }
+        }
         //====
         //HUY
         helloList.onclick = function (e) {
@@ -203,8 +217,6 @@ const app = {
         audioCurrentSong.src = this.listSong[this.currentIndex].path
 
     },
-
-
 
     //chuyển bài tiếp theo
     loadNextSong: function () {

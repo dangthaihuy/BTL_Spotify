@@ -317,9 +317,11 @@
                 <img class="playing-mediacontrol__list" src="./assets/img/now-playing/list.PNG" alt="">
                 <img class="playing-mediacontrol__remote" src="./assets/img/now-playing/remote.PNG" alt="">
                 <div class="playing-mediacontrol__volumebar">
-                    <img src="./assets/img/now-playing/volume-big.PNG" alt=""
-                        class="playing-mediacontrol__volumebar-btn">
-                    <input type="range" class="playing-mediacontrol__volumebar-range">
+                    <div class="playing-mediacontrol__volumebar-btn">
+                        <i class="playing-mediacontrol__volumebar-btn__on fas fa-volume-up"></i>
+                        <i class="playing-mediacontrol__volumebar-btn__off fas fa-volume-mute"></i>
+                    </div>
+                    <input type="range" class="playing-mediacontrol__volumebar-range" max="100" min="0" step="1">
                 </div>
                 <img src="./assets/img/now-playing/fullscreen.PNG" alt="" class="playing-mediacontrol__fullscreen">
 
