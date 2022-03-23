@@ -71,16 +71,15 @@
                     <h1>Good morning</h1>
                     <div id="mainhead-conlist">
                         <ul id="mainhead-connav">
-
+                            <!-- Xử lý bên JS -->
                         </ul>
                     </div>
                 </div>
             </div>
-            <div id="main-body" style="display: none;">
+            <div id="main-body">
                 <div class="body-nav-list">
                     <h1>Made for you</h1>
                     <div class="body-play-list">
-
                         <div class="body-playlist-item">
                             <img src="./assets/img/main/headnav/play-now.png" alt="" class="body-list-play hide">
                             <img src="./assets/img/main/mfy/Maroon 5.jfif" alt="">
@@ -257,9 +256,9 @@
                                 <img src="./assets/img/main/duration.png" alt="">
                             </div>
                         </div>
-                        <div class="main-openplaylist-body__table-body">
+                        <ul class="main-openplaylist-body__table-body">
 
-                        </div>
+                        </ul>
 
                     </div>
                 </div>
@@ -319,9 +318,10 @@
                 <div class="playing-mediacontrol__volumebar">
                     <div class="playing-mediacontrol__volumebar-btn">
                         <i class="playing-mediacontrol__volumebar-btn__on fas fa-volume-up"></i>
+                        <i class="playing-mediacontrol__volumebar-btn__onMedium fas fa-volume-down"></i>
                         <i class="playing-mediacontrol__volumebar-btn__off fas fa-volume-mute"></i>
                     </div>
-                    <input type="range" class="playing-mediacontrol__volumebar-range" max="100" min="0" step="1">
+                    <input type="range" class="playing-mediacontrol__volumebar-range" max="100" min="0" step="1" value="100">
                 </div>
                 <img src="./assets/img/now-playing/fullscreen.PNG" alt="" class="playing-mediacontrol__fullscreen">
 

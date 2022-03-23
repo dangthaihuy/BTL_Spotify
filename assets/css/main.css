@@ -424,6 +424,7 @@
     align-items: center;
     font-size: 1.4rem;
     border-radius: var(--border-radius);
+    cursor: pointer;
 }
 
 .main-openplaylist-body__table-item:hover {
@@ -829,10 +830,12 @@ i.playing-control__buttons-pause {
 .playing-mediacontrol__volumebar-btn {
     color: var(--white-color);
     font-size: 16px;
-    margin: 8px;
+    margin: auto 8px;
+    min-width: 20px;
+    display: flex;
 }
 
-i.playing-mediacontrol__volumebar-btn__off {
+i.playing-mediacontrol__volumebar-btn__off, i.playing-mediacontrol__volumebar-btn__onMedium {
     display: none;
 }
 
@@ -840,10 +843,17 @@ i.playing-mediacontrol__volumebar-btn__off {
     display: block;
 }
 
-.playing-mediacontrol__volumebar-btn.mute .playing-mediacontrol__volumebar-btn__on {
+.playing-mediacontrol__volumebar-btn.mute .playing-mediacontrol__volumebar-btn__on, .playing-mediacontrol__volumebar-btn__onMedium {
     display: none;
 }
 
+.playing-mediacontrol__volumebar-btn.medium .playing-mediacontrol__volumebar-btn__on, .playing-mediacontrol__volumebar-btn__off {
+    display: none;
+}
+
+.playing-mediacontrol__volumebar-btn.medium .playing-mediacontrol__volumebar-btn__onMedium {
+    display: block;
+}
 
 .playing-mediacontrol__volumebar-range {
     height: 4px;

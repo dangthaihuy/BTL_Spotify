@@ -46,12 +46,14 @@ const app = {
             }
         })
     },
-
+    openSong: function(index) {
+            console.log(1);
+        },
     //render list nhạc
     render: function () {
-
+        //${index == this.currentIndex ? 'active' : ''}
         const htmls = this.listSong.map((song, index) => {
-            return `<div class="main-openplaylist-body__table-item ${index == this.currentIndex ? 'active' : ''}">
+            return `<div class="main-openplaylist-body__table-item" onclick="openSong(${index})">
                 <div class="number">${index + 1}</div>
                 <div class="title">
                     <img src="${song.img}" alt="" class="title-img">
@@ -69,6 +71,8 @@ const app = {
         })
         $('.main-openplaylist-body__table-body').innerHTML = htmls.join('');
     },
+
+    
 
     //Xử lí các sự kiện handle
     handleEvent: function () {
@@ -180,13 +184,43 @@ const app = {
 
         // volume on/off
         volumeBtn.onclick = function () {
-            _this.isMute = !_this.isMute
-            volumeBtn.classList.toggle('mute', _this.isMute)
-            if (_this.isMute) {
+            let audioVolumeNow = audioCurrentSong.volume;
+            if (_this.isMute == false) {
+                _this.isMute = true
+                volumeBtn.classList.add('mute')
+                volumeBtn.classList.remove('medium')
                 volumeBar.value = "0"
                 audioCurrentSong.muted = true
             } else {
+                _this.isMute = false
+                volumeBar.value = audioVolumeNow * 100;
+                audioCurrentSong.volume = audioVolumeNow;
+                if (volumeBar.value > 0 && volumeBar.value < 70) {
+                    volumeBtn.classList.remove('mute')
+                    volumeBtn.classList.add('medium')
+                } else {
+                    volumeBtn.classList.remove('medium')
+                    volumeBtn.classList.remove('mute')
+                }
                 audioCurrentSong.muted = false
+            }
+        }
+
+        //volume change
+        volumeBar.onclick = function () {
+            audioCurrentSong.volume = volumeBar.value / 100;
+            if (volumeBar.value == "0") {
+                _this.isMute = true
+                volumeBtn.classList.remove('medium')
+                volumeBtn.classList.add('mute')
+            } else if (volumeBar.value > 0 && volumeBar.value < 70) {
+                _this.isMute = false
+                volumeBtn.classList.remove('mute')
+                volumeBtn.classList.add('medium')
+            } else {
+                _this.isMute = false
+                volumeBtn.classList.remove('medium')
+                volumeBtn.classList.remove('mute')
             }
         }
         //====
