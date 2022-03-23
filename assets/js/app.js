@@ -28,6 +28,8 @@ const repeatBtn = $('.repeat')
 
 const volumeBtn = $('.playing-mediacontrol__volumebar-btn')
 const volumeBar = $('.playing-mediacontrol__volumebar-range')
+
+const musicList = $('.main-openplaylist-body__table-body')
 //=============================================================
 const app = {
     //QUYNH
@@ -46,14 +48,12 @@ const app = {
             }
         })
     },
-    openSong: function(index) {
-            console.log(1);
-        },
+
     //render list nhạc
     render: function () {
         //${index == this.currentIndex ? 'active' : ''}
         const htmls = this.listSong.map((song, index) => {
-            return `<div class="main-openplaylist-body__table-item" onclick="openSong(${index})">
+            return `<li class="main-openplaylist-body__table-item" songIndex="${index}">
                 <div class="number">${index + 1}</div>
                 <div class="title">
                     <img src="${song.img}" alt="" class="title-img">
@@ -67,12 +67,12 @@ const app = {
                     <span class="more__time">4:45</span>
                     <img src="./assets/img/now-playing/favorite.png" alt="" class="more__favourite">
                 </div>
-            </div>`
+            </li>`
         })
         $('.main-openplaylist-body__table-body').innerHTML = htmls.join('');
     },
 
-    
+
 
     //Xử lí các sự kiện handle
     handleEvent: function () {
@@ -135,7 +135,6 @@ const app = {
         processCurrentSong.onchange = function (e) {
             const seekTime = e.target.value * audioCurrentSong.duration / 100
             audioCurrentSong.currentTime = seekTime
-            console.log(seekTime);
         }
 
         // preview song
@@ -223,7 +222,19 @@ const app = {
                 volumeBtn.classList.remove('mute')
             }
         }
-        //====
+
+        //click vào bài hát
+        musicList.onclick = function (e) {
+            const songClick = e.target.closest('.main-openplaylist-body__table-item');
+            if (songClick) {
+                audioCurrentSong.onpause();
+                app.currentIndex = songClick.getAttribute('songIndex'); 
+                _this.loadCurrentSong(); 
+                audioCurrentSong.play();
+            }
+        }
+
+        //=========================================
         //HUY
         helloList.onclick = function (e) {
             const listClick = e.target.closest('.mainhead-connav-item')
@@ -249,7 +260,6 @@ const app = {
         artistCurrentSong.textContent = this.listSong[this.currentIndex].artist
         imgCurrentSong.src = this.listSong[this.currentIndex].img
         audioCurrentSong.src = this.listSong[this.currentIndex].path
-
     },
 
     //chuyển bài tiếp theo
