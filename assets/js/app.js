@@ -30,11 +30,12 @@ const volumeBtn = $('.playing-mediacontrol__volumebar-btn')
 const volumeBar = $('.playing-mediacontrol__volumebar-range')
 
 const musicList = $('.main-openplaylist-body__table-body')
+
 //=============================================================
 const app = {
     //QUYNH
     listSong: [...allSongs],
-    currentIndex: 0,
+    currentIndex: NaN,
     isPlay: false,
     isRandom: false,
     isRepeat: false,
@@ -51,9 +52,8 @@ const app = {
 
     //render list nhạc
     render: function () {
-        //${index == this.currentIndex ? 'active' : ''}
         const htmls = this.listSong.map((song, index) => {
-            return `<li class="main-openplaylist-body__table-item" songIndex="${index}">
+            return `<li class="main-openplaylist-body__table-item ${index == this.currentIndex ? 'active' : ''}"  songIndex="${index}">
                 <div class="number">${index + 1}</div>
                 <div class="title">
                     <img src="${song.img}" alt="" class="title-img">
@@ -64,15 +64,13 @@ const app = {
                 </div>
                 <div class="album">${song.album}</div>
                 <div class="more">
-                    <span class="more__time">4:45</span>
+                    <span class="more__time">0.00</span>
                     <img src="./assets/img/now-playing/favorite.png" alt="" class="more__favourite">
                 </div>
             </li>`
         })
-        $('.main-openplaylist-body__table-body').innerHTML = htmls.join('');
+        $('.main-openplaylist-body__table-body').innerHTML = htmls.join('')
     },
-
-
 
     //Xử lí các sự kiện handle
     handleEvent: function () {
@@ -227,11 +225,14 @@ const app = {
         musicList.onclick = function (e) {
             const songClick = e.target.closest('.main-openplaylist-body__table-item');
             if (songClick) {
+                console.log(songClick);
                 audioCurrentSong.onpause();
-                app.currentIndex = songClick.getAttribute('songIndex'); 
+                _this.currentIndex = songClick.getAttribute('songIndex'); 
                 _this.loadCurrentSong(); 
                 audioCurrentSong.play();
+                _this.render();
             }
+            console.log(_this.currentIndex);
         }
 
         //=========================================
@@ -253,7 +254,8 @@ const app = {
 
         }
     },
-
+    //============================================================================
+    //QUỲNH
     //cập nhật trạng thái của bài hát đang phát trên thanh
     loadCurrentSong: function () {
         titleCurrentSong.textContent = this.listSong[this.currentIndex].name
