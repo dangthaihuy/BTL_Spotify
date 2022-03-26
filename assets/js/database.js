@@ -4,7 +4,8 @@ const $$ = document.querySelectorAll.bind(document)
 
 const mainHeaderConNav = $('#mainhead-connav')
 const rightUsers = $('.right-users')
-const listMadeForYou = $('.body-play-list')
+const listMadeForYou = $('#madeforyou-list')
+const listBestofartist = $('#bestofartist-list')
 
 export const allSongs = [
     {
@@ -1025,10 +1026,85 @@ dailyMixesFactory.start()
 export const albumDailyMixes = dailyMixesFactory.data.albumDailyMixes
 
 
+//Xử lý Best of artist
+export const bestOfArtistList = [
+    {
+        id: 1,
+        name: "All Time Low",
+        description: 'The best of All Time Low, all in one playlist.',
+        owner: "Spotify",
+        img: "./data/playlists/best-of-artist/AllTimeLow.jfif",
+        songs: allSongs.filter(song => song.artist.includes('All Time Low')).sort(() => Math.random() - 0.5),
+        backgroundColor: '204, 78, 78',
+        headerColor: '86, 32, 32',
+        tag: ['best of artist',]
+    },
+    {
+        id: 2,
+        name: "Jonas Blue",
+        description: 'This is Jonas Blue. The essential tracks, all in one playlist.',
+        owner: "Spotify",
+        img: "./data/playlists/best-of-artist/JonasBlue.jfif",
+        songs: allSongs.filter(song => song.artist.includes('Jonas Blue')).sort(() => Math.random() - 0.5),
+        backgroundColor: '110, 141, 194',
+        headerColor: '45, 57, 80',
+        tag: ['best of artist',]
+    },
+    {
+        id: 3,
+        name: "Jonas Brothers",
+        description: 'All the essentials in one playlist.',
+        owner: "Spotify",
+        img: "./data/playlists/best-of-artist/JonasBrothers.jfif",
+        songs: allSongs.filter(song => song.artist.includes('Jonas Brothers') || song.artist.includes('DNCE')).sort(() => Math.random() - 0.5),
+        backgroundColor: '147, 139, 169',
+        headerColor: '61, 57, 70',
+        tag: ['best of artist',]
+    },
+    {
+        id: 4,
+        name: "Kygo",
+        description: "The essential Norwegian DJ's tracks and remixes.",
+        owner: "Spotify",
+        img: "./data/playlists/best-of-artist/Kygo.jfif",
+        songs: allSongs.filter(song => song.artist.includes('Kygo')),
+        backgroundColor: '125, 201, 193',
+        headerColor: '51, 83, 80',
+        tag: ['best of artist',]
+    },
 
 
+    {
+        id: 5,
+        name: "Maroon 5",
+        description: 'The essential tracks by the Dutch DJ and producer.',
+        owner: "Spotify",
+        img: "./data/playlists/best-of-artist/Maroon5.jfif",
+        songs: allSongs.filter(song => song.artist.includes('Maroon 5')),
+        backgroundColor: '132, 199, 192',
+        headerColor: '54, 83, 80',
+        tag: ['best of artist',]
+    },
+]
+renderBestOfArtistList()
 
-function renderPlaylist(array) {
+
+function renderBestOfArtistList() {
+    const htmls = bestOfArtistList.map((list, id) => {
+        return `
+        <div class="body-playlist-item" id-list=${id}>
+            <img src="./assets/img/main/headnav/play-now.png" alt="" class="body-list-play hide">
+            <img src=${list.img} alt="">
+            <a href="#" class="body-playlist-item-header font-16">This Is ${list.name}</a>
+            <a href="#" class="font-14" style="margin-top: 4px;">${list.description}</a>
+        </div>
+        `
+    })
+    listBestofartist.innerHTML = htmls.join('')
+}
+
+
+function renderPlaylist() {
     const playLists = allPlaylists.map((list, id) => {
         return `
         <li class="dis-flex-row mainhead-connav-item" id-list=${id}>

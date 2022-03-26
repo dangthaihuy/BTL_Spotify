@@ -293,11 +293,12 @@
 #main-body .body-playlist-item {
     display: flex;
     position: relative;
-    
     flex-direction: column;
     width: 18%;
     padding: 16px;
     background-color: #181818;
+    transition: all linear 0.3s;
+    cursor: pointer;
 }
 
 #main-body .body-playlist-item .body-list-play {
