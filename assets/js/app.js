@@ -1,10 +1,11 @@
-import { allSongs, allPlaylists } from "./database.js";
-
+import { allSongs, allPlaylists, albumDailyMixes } from "./database.js";
+console.log(albumDailyMixes);
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
 //HUY
 const helloList = $('#mainhead-connav')
+const madeForYou = $('.body-play-list')
 const mainHead = $('#main-head')
 const listAlbum = $('#list-album')
 const mainOpenPlayList = $('.main-openplaylist')
@@ -242,10 +243,23 @@ const app = {
             if (listClick) {
                 listAlbum.style.display = 'none'
                 mainOpenPlayList.style.display = 'block'
-                _this.getScreenClickList(listClick.getAttribute('id-list'));
+                _this.getScreenClickList(listClick.getAttribute('id-list'), allPlaylists);
                 _this.addSongsToList(allPlaylists[listClick.getAttribute('id-list')].songs)
                 _this.render()
                 _this.setThemeList(allPlaylists[listClick.getAttribute('id-list')])
+
+            }
+        }
+
+        madeForYou.onclick = function (e) {
+            const listClick = e.target.closest('.body-playlist-item')
+            if (listClick) {
+                listAlbum.style.display = 'none'
+                mainOpenPlayList.style.display = 'block'
+                _this.getScreenClickList(listClick.getAttribute('id-list'), albumDailyMixes);
+                _this.addSongsToList(albumDailyMixes[listClick.getAttribute('id-list')].songs)
+                _this.render()
+                _this.setThemeList(albumDailyMixes[listClick.getAttribute('id-list')])
 
             }
         }
@@ -299,8 +313,9 @@ const app = {
     //HUY
     //Xử lí các sự kiện handle
 
-    getScreenClickList: function (index) {
-        const list = allPlaylists[index]
+    getScreenClickList: function (index, data) {
+        console.log(data);
+        const list = data[index]
         mainOpenPlayListHeader.innerHTML = `
         <img src="${list.img}" alt="">
         <div class="main-openplaylist-header__title">

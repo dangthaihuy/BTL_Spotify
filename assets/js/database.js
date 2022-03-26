@@ -4,6 +4,7 @@ const $$ = document.querySelectorAll.bind(document)
 
 const mainHeaderConNav = $('#mainhead-connav')
 const rightUsers = $('.right-users')
+const listMadeForYou = $('.body-play-list')
 
 export const allSongs = [
     {
@@ -865,7 +866,7 @@ export const allPlaylists = [
         description: '',
         owner: "Team12",
         img: "./data/playlists/own-playlists/liked-songs.jpg",
-        songs: allSongs.filter(song => song.tag.includes('favorite')),
+        songs: allSongs.filter(song => song.tag.includes('favorite')).sort(() => Math.random() - 0.5),
         backgroundColor: '74, 53, 144',
         headerColor: '32, 22, 64',
         tag: ['own playlist', 'liked songs']
@@ -876,7 +877,7 @@ export const allPlaylists = [
         description: '',
         owner: "Team12",
         img: "./data/playlists/own-playlists/all-time-low.jpg",
-        songs: allSongs.filter(song => song.artist.includes('All Time Low')),
+        songs: allSongs.filter(song => song.artist.includes('All Time Low')).sort(() => Math.random() - 0.5),
         backgroundColor: '142, 128, 86',
         headerColor: '64, 58, 38',
         tag: ['own playlist',]
@@ -887,7 +888,7 @@ export const allPlaylists = [
         description: 'Most of these songs are come from Lost Santos Rock Radio',
         owner: "Team12",
         img: "./data/playlists/own-playlists/i-built-this-playlist-on-rock-and-roll.jpg",
-        songs: allSongs.filter(song => song.tag.includes('rock')),
+        songs: allSongs.filter(song => song.tag.includes('rock')).sort(() => Math.random() - 0.5),
         backgroundColor: '42, 102, 80',
         headerColor: '16, 42, 32',
         tag: ['own playlist',]
@@ -898,7 +899,7 @@ export const allPlaylists = [
         description: '',
         owner: "Team12",
         img: "./data/playlists/own-playlists/jonas-brothers.jpg",
-        songs: allSongs.filter(song => song.artist.includes('Jonas Brothers') || song.artist.includes('DNCE')),
+        songs: allSongs.filter(song => song.artist.includes('Jonas Brothers') || song.artist.includes('DNCE')).sort(() => Math.random() - 0.5),
         backgroundColor: '180, 200, 200',
         headerColor: '80, 90, 90',
         tag: ['own playlist',]
@@ -909,7 +910,7 @@ export const allPlaylists = [
         description: '',
         owner: "Team12",
         img: "./data/playlists/own-playlists/martin-garrix.jpg",
-        songs: allSongs.filter(song => song.artist.includes('Martin Garrix')),
+        songs: allSongs.filter(song => song.artist.includes('Martin Garrix')).sort(() => Math.random() - 0.5),
         backgroundColor: '13, 54, 75',
         headerColor: '3, 22, 32',
         tag: ['own playlist',]
@@ -920,7 +921,7 @@ export const allPlaylists = [
         description: '',
         owner: "Team12",
         img: "./data/playlists/own-playlists/jonas-blue.jpg",
-        songs: allSongs.filter(song => song.artist.includes('Jonas Blue')),
+        songs: allSongs.filter(song => song.artist.includes('Jonas Blue')).sort(() => Math.random() - 0.5),
         backgroundColor: '3, 24, 60',
         headerColor: '0, 10, 26',
         tag: ['own playlist',]
@@ -953,6 +954,79 @@ export const allUsers = [
 
 renderPlaylist(allPlaylists)
 renderUsers(allUsers)
+
+
+// Xử lý Made For You
+const dailyMixesFactory = {
+    data: {
+        artistGroup: [
+            ["Tobu", "Martin Garrix", "Jonas Blue"],
+            ["Kygo", "Martin Jensen", "John De Sohn"],
+            ["Tobu", "Jonas Brothers", "Panic! At The Disco"],
+            ["Boston", "Starship", "The Cult", "The White Stripes", "The Animals", "Gun N' Roses", "Queen"],
+            ["Queen", "Maroon 5", "Justin Bieber"]
+        ],
+        albumDailyMixes: [
+
+        ]
+    },
+    createDailyMixer: function () {
+        const data = this.data.artistGroup;
+        const albumDaily = []
+        for (const listArtist of data) {
+            let songOfListArtist = [];
+            for (const artist of listArtist) {
+                const album = allSongs.filter((song) => {
+                    return song.artist.includes(artist)
+                })
+                songOfListArtist = songOfListArtist.concat(album)
+            }
+            albumDaily.push(songOfListArtist)
+        }
+        for (const i in data) {
+            const playlist = {
+                name: `Daily Mixes ${new Number(i) + 1}`,
+                id: i,
+                description: this.getDescription(data[i]),
+                owner: 'Made for Team12',
+                img: `./data/playlists/daily-mixes/${data[i][0].toLowerCase()}/daily-mix-${new Number(i) + 1}.jfif`,
+                songs: albumDaily[i],
+                backgroundColor: '122, 130, 137',
+                headerColor: '51, 54, 58',
+                tag: ['daily mix']
+            }
+            this.data.albumDailyMixes.push(playlist)
+        }
+    },
+    getDescription: function (data) {
+        const result = data.join(', ')
+        return `${result}, and more`
+    },
+    render: function () {
+        const htmls = this.data.albumDailyMixes.map((album, id) => {
+            return `
+            <div class="body-playlist-item" id-list=${id}>
+                <img src="./assets/img/main/headnav/play-now.png" alt="" class="body-list-play hide">
+                <img src=${album.img} alt="">
+                <a href="#" class="body-playlist-item-header font-16">${album.name}</a>
+                <a href="#" class="font-14" style="margin-top: 4px;">${album.description}</a>
+            </div>
+            `
+        });
+        listMadeForYou.innerHTML = htmls.join('')
+    },
+    start: function () {
+        this.createDailyMixer();
+        this.render()
+    }
+}
+
+dailyMixesFactory.start()
+export const albumDailyMixes = dailyMixesFactory.data.albumDailyMixes
+
+
+
+
 
 function renderPlaylist(array) {
     const playLists = allPlaylists.map((list, id) => {
