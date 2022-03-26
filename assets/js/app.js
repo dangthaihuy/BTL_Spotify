@@ -6,8 +6,10 @@ const $$ = document.querySelectorAll.bind(document)
 //HUY
 const helloList = $('#mainhead-connav')
 const mainHead = $('#main-head')
+const listAlbum = $('#list-album')
 const mainOpenPlayList = $('.main-openplaylist')
 const mainOpenPlayListHeader = $('.main-openplaylist-header')
+const mainBodyPlaylist = $('.main-openplaylist-body')
 const actionePrevPage = $('#action__prevpage')
 const playAlbumBtn = $('.main-openplaylist-body__btns-play')
 const timeSongNow = $('.playing-control__playback__timeplayed')
@@ -35,7 +37,7 @@ const musicList = $('.main-openplaylist-body__table-body')
 const app = {
     //QUYNH
     listSong: [...allSongs],
-    currentIndex: NaN,
+    currentIndex: 0,
     isPlay: false,
     isRandom: false,
     isRepeat: false,
@@ -119,7 +121,7 @@ const app = {
             playBtn.classList.remove('playing')
             imgAnimate.pause()
         }
-        
+
         //tiến độ thay đổi
         audioCurrentSong.ontimeupdate = function () {
             if (audioCurrentSong.duration) {
@@ -225,14 +227,12 @@ const app = {
         musicList.onclick = function (e) {
             const songClick = e.target.closest('.main-openplaylist-body__table-item');
             if (songClick) {
-                console.log(songClick);
                 audioCurrentSong.onpause();
-                _this.currentIndex = songClick.getAttribute('songIndex'); 
-                _this.loadCurrentSong(); 
+                _this.currentIndex = songClick.getAttribute('songIndex');
+                _this.loadCurrentSong();
                 audioCurrentSong.play();
                 _this.render();
             }
-            console.log(_this.currentIndex);
         }
 
         //=========================================
@@ -240,16 +240,18 @@ const app = {
         helloList.onclick = function (e) {
             const listClick = e.target.closest('.mainhead-connav-item')
             if (listClick) {
-                mainHead.style.display = 'none'
+                listAlbum.style.display = 'none'
                 mainOpenPlayList.style.display = 'block'
                 _this.getScreenClickList(listClick.getAttribute('id-list'));
                 _this.addSongsToList(allPlaylists[listClick.getAttribute('id-list')].songs)
                 _this.render()
+                _this.setThemeList(allPlaylists[listClick.getAttribute('id-list')])
+
             }
         }
 
         actionePrevPage.onclick = function () {
-            mainHead.style.display = 'block'
+            listAlbum.style.display = 'block'
             mainOpenPlayList.style.display = 'none'
 
         }
@@ -328,6 +330,12 @@ const app = {
             const totalSecond = totalTimeSong - totalMinute * 60
             totalSecond < 10 ? timeTotalSongNow.innerHTML = `${totalMinute}:0${totalSecond}` : timeTotalSongNow.innerHTML = `${totalMinute}:${totalSecond}`
         }
+    },
+
+    setThemeList: function (list) {
+        mainOpenPlayListHeader.style.backgroundColor = `rgb(${list.backgroundColor})`
+        mainOpenPlayListHeader.style.backgroundImage = `linear-gradient(rgb(${list.backgroundColor}), rgb(24, 24, 24) 600px)`
+        mainBodyPlaylist.style.backgroundImage = `linear-gradient(rgb(${list.headerColor}), rgb(24, 24, 24))`
     },
     //========================================================
 

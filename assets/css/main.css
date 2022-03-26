@@ -170,7 +170,7 @@
     align-items: center;
     width: 71%;
     padding: 0 30px;
-    background-color: rgba(193, 193, 193, 0.2);
+    background-color: rgba(255,255,255,0);
 }
 
 #mainhead-fixed img {
@@ -789,16 +789,15 @@ i.playing-control__buttons-pause {
 }
 
 .playing-control__playback__slider {
-    background: #535353;
     border-radius: var(--border-radius);
     height: 4px;
     width: 100%;
     margin: 0 10px;
 }
 
-.playing-control__playback__slider:in-range {
-    background-color: red;
-}
+
+
+
 
 .playing-control__playback__timetotal {
     font-size: 1.2rem;
