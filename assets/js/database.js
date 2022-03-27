@@ -6,6 +6,7 @@ const mainHeaderConNav = $('#mainhead-connav')
 const rightUsers = $('.right-users')
 const listMadeForYou = $('#madeforyou-list')
 const listBestofartist = $('#bestofartist-list')
+const listRecentlyPlayed = $('#recently-played-list')
 
 export const allSongs = [
     {
@@ -860,7 +861,7 @@ export const allSongs = [
     },
 ]
 
-export const allPlaylists = [
+export const headerList = [
     {
         id: 1,
         name: "Liked Songs",
@@ -953,7 +954,7 @@ export const allUsers = [
     }
 ]
 
-renderPlaylist(allPlaylists)
+renderPlaylist(headerList)
 renderUsers(allUsers)
 
 
@@ -1089,6 +1090,31 @@ export const bestOfArtistList = [
 renderBestOfArtistList()
 
 
+const recentlyPlayed = {
+    data: headerList.concat(albumDailyMixes, bestOfArtistList).sort(() => Math.random() - 0.5).slice(0, 5),
+    render: function () {
+        const htmls = this.data.map((list, id) => {
+            return `
+            <div class="body-playlist-item" id-list=${id}>
+                <img src="./assets/img/main/headnav/play-now.png" alt="" class="body-list-play hide">
+                <img src=${list.img} alt="">
+                <a href="#" class="body-playlist-item-header font-16">${list.name}</a>
+                <a href="#" class="font-14" style="margin-top: 4px;">${list.description}</a>
+            </div>
+            `
+        })
+        listRecentlyPlayed.innerHTML = htmls.join('')
+    },
+
+    start: function () {
+        this.render()
+    }
+}
+
+recentlyPlayed.start()
+export const recentlyPlayedList = recentlyPlayed.data
+
+
 function renderBestOfArtistList() {
     const htmls = bestOfArtistList.map((list, id) => {
         return `
@@ -1105,7 +1131,7 @@ function renderBestOfArtistList() {
 
 
 function renderPlaylist() {
-    const playLists = allPlaylists.map((list, id) => {
+    const playLists = headerList.map((list, id) => {
         return `
         <li class="dis-flex-row mainhead-connav-item" id-list=${id}>
             <img src=${list.img} class="list-img" alt="">

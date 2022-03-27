@@ -1,5 +1,8 @@
-import { allSongs, allPlaylists, albumDailyMixes, bestOfArtistList } from "./database.js";
-console.log(bestOfArtistList);
+import { allSongs, headerList, albumDailyMixes, bestOfArtistList, recentlyPlayedList } from "./database.js";
+console.log(recentlyPlayedList);
+
+
+
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
@@ -7,11 +10,15 @@ const $$ = document.querySelectorAll.bind(document)
 const helloList = $('#mainhead-connav')
 const madeForYou = $('#madeforyou-list')
 const bestOfArtist = $('#bestofartist-list')
+const recentlyPlayed = $('#recently-played-list')
+
+
 const mainHead = $('#main-head')
 const listAlbum = $('#list-album')
 const mainOpenPlayList = $('.main-openplaylist')
 const mainOpenPlayListHeader = $('.main-openplaylist-header')
 const mainBodyPlaylist = $('.main-openplaylist-body')
+
 const actionePrevPage = $('#action__prevpage')
 const playAlbumBtn = $('.main-openplaylist-body__btns-play')
 const timeSongNow = $('.playing-control__playback__timeplayed')
@@ -38,7 +45,7 @@ const musicList = $('.main-openplaylist-body__table-body')
 //=============================================================
 const app = {
     //QUYNH
-    listSong: [...allSongs],
+    listSong: [...allSongs].sort(() => Math.random() - 0.5),
     currentIndex: 0,
     isPlay: false,
     isRandom: false,
@@ -244,10 +251,10 @@ const app = {
             if (listClick) {
                 listAlbum.style.display = 'none'
                 mainOpenPlayList.style.display = 'block'
-                _this.getScreenClickList(listClick.getAttribute('id-list'), allPlaylists);
-                _this.addSongsToList(allPlaylists[listClick.getAttribute('id-list')].songs)
+                _this.getScreenClickList(listClick.getAttribute('id-list'), headerList);
+                _this.addSongsToList(headerList[listClick.getAttribute('id-list')].songs)
                 _this.render()
-                _this.setThemeList(allPlaylists[listClick.getAttribute('id-list')])
+                _this.setThemeList(headerList[listClick.getAttribute('id-list')])
 
             }
         }
@@ -274,6 +281,19 @@ const app = {
                 _this.addSongsToList(bestOfArtistList[listClick.getAttribute('id-list')].songs)
                 _this.render()
                 _this.setThemeList(bestOfArtistList[listClick.getAttribute('id-list')])
+
+            }
+        }
+
+        recentlyPlayed.onclick = function (e) {
+            const listClick = e.target.closest('.body-playlist-item')
+            if (listClick) {
+                listAlbum.style.display = 'none'
+                mainOpenPlayList.style.display = 'block'
+                _this.getScreenClickList(listClick.getAttribute('id-list'), recentlyPlayedList);
+                _this.addSongsToList(recentlyPlayedList[listClick.getAttribute('id-list')].songs)
+                _this.render()
+                _this.setThemeList(recentlyPlayedList[listClick.getAttribute('id-list')])
 
             }
         }
