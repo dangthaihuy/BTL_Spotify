@@ -1133,7 +1133,7 @@ function renderBestOfArtistList() {
 function renderPlaylist() {
     const playLists = headerList.map((list, id) => {
         return `
-        <li class="dis-flex-row mainhead-connav-item" id-list=${id}>
+        <li class="dis-flex-row mainhead-connav-item" id-list=${id} id = "mainhead-connav-item-${id}">
             <img src=${list.img} class="list-img" alt="">
             <div class="head-navin4 dis-flex-row">
                 <h2 class="nav-namenav-name">${list.name}</h2>
