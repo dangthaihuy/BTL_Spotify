@@ -104,7 +104,22 @@
     margin: 10px 24px 0 24px
 }
 
-
+.left__action-playlists > li {
+    color: #b3b3b3;
+    font-size: 1.3rem;
+    font-weight: 550;
+    margin: 10px 24px 0 24px;
+    line-height: 25px;
+    transition: all linear 0.2s;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+ 
+ 
+.left__action-playlists > li:hover  {
+    color: white;
+}
 
 
 
