@@ -19,7 +19,7 @@
 
 <body>
     <div id="root">
-        <div class="root__left">
+        <div class="root__left res-hide">
             <img class="left-img" src="./assets/img/left-sidebar/spotify.png" alt="">
             <ul class="left__navigation">
                 <li class="left__navigation-item active" style="cursor: pointer;">
@@ -47,46 +47,7 @@
             </ul>
 
             <!--nav-bar cho mobile va tablet-->
-            <label for="nav-input" class="root__nav-bar">
-               <img src="./assets/img/responsive/menu.png" alt="">
-            </label>
-            <input type="checkbox" hidden name="" class="nav-input-item" id="nav-input">
             
-            <label for="nav-input" class="root__overlay"></label>
-
-            <div class="root__view-profile">
-                <label for="nav-input" class="exit-item">
-                    <img src="./assets/img/responsive/exit-item.png">
-                </label>
-                <ul class="my-account">
-                    <img src="./assets/img/user/user-avatar.jpg">
-                    <div class="personal-account"> TEAM 12</div>
-                </ul>
-                <div class="view-profile-line"></div>
-                <ul class="menu">
-                    <li class="menu-item" style="cursor: not-allowed;">
-                        <img src="./assets/img/left-sidebar/library.PNG" alt="">
-                        <span>Your library</span>
-                    </li>
-                    <li class="menu-item">
-                        <img src="./assets/img/left-sidebar/create-playlist.PNG" alt="">
-                        <span>Create Playlist</span>
-                    </li>
-                    <li class="menu-item">
-                        <img src="./assets/img/left-sidebar/liked-songs.PNG" alt="">
-                        <span>Loved Songs</span>
-                    </li>
-                </ul>
-                <div class="view-profile-line"></div>
-                <ul class="friend-activity">
-                    <div class="friend-heading">
-                        <span >
-                            Friend activity
-                        </span>
-                        <img src="./assets/img/right-sidebar/friend-activity-pc.png" alt="">
-                    </div>
-                </ul>
-            </div>
             <!------------------------------->
             <div class="left__action-line"></div>
 
@@ -119,7 +80,50 @@
             <div id="list-album" style="display:block;">
                 <div id="main-head" style="display: block;">
                     <div id="mainhead-content">
-                        <h1 id="timer-head">Good morning</h1>
+                        <div id="mainhead-res">
+                            <h1 id="timer-head">Good morning</h1>
+                            <label for="nav-input" class="root__nav-bar">
+                                <img src="./assets/img/responsive/menu.png" alt="">
+                             </label>
+                             <input type="checkbox" hidden name="" class="nav-input-item" id="nav-input">
+                             
+                             <label for="nav-input" class="root__overlay"></label>
+                 
+                             <div class="root__view-profile">
+                                 <label for="nav-input" class="exit-item">
+                                     <img src="./assets/img/responsive/exit-item.png">
+                                 </label>
+                                 <ul class="my-account">
+                                     <img src="./assets/img/user/user-avatar.jpg">
+                                     <div class="personal-account"> TEAM 12</div>
+                                 </ul>
+                                 <div class="view-profile-line"></div>
+                                 <ul class="menu">
+                                     <li class="menu-item" style="cursor: not-allowed;">
+                                         <img src="./assets/img/left-sidebar/library.PNG" alt="">
+                                         <span>Your library</span>
+                                     </li>
+                                     <li class="menu-item">
+                                         <img src="./assets/img/left-sidebar/create-playlist.PNG" alt="">
+                                         <span>Create Playlist</span>
+                                     </li>
+                                     <li class="menu-item">
+                                         <img src="./assets/img/left-sidebar/liked-songs.PNG" alt="">
+                                         <span>Loved Songs</span>
+                                     </li>
+                                 </ul>
+                                 <div class="view-profile-line"></div>
+                                 <ul class="friend-activity">
+                                     <div class="friend-heading">
+                                         <span >
+                                             Friend activity
+                                         </span>
+                                         <img src="./assets/img/right-sidebar/friend-activity-pc.png" alt="">
+                                     </div>
+                                 </ul>
+                             </div>
+                        </div>
+                        
                         <div id="mainhead-conlist">
                             <ul id="mainhead-connav">
                                 <!-- Xử lý bên JS -->
@@ -219,7 +223,7 @@
                 </div>
             </div>
         </div>
-        <div class="root__right">
+        <div class="root__right res-hide">
             <div class="right-heading">
                 <span class="right-heading-title">
                     Friend activity
@@ -238,24 +242,24 @@
                         <div class="playing-song-content-info-name">Super Idol (remix)</div>
                         <div class="playing-song-content-info-artist">阿肆</div>
                     </div>
-                    <img src="./assets/img/now-playing/favorite.png" alt="" class="playing-song-content-favourite">
-                    <img src="./assets/img/now-playing/overlay.png" alt="" class="playing-song-content-overlay">
+                    <img src="./assets/img/now-playing/favorite.png" alt="" class="playing-song-content-favourite ">
+                    <img src="./assets/img/now-playing/overlay.png" alt="" class="playing-song-content-overlay res-hide">
 
                 </div>
             </div>
             <div class="playing-control">
                 <div class="playing-control__buttons">
-                    <div class="shuffle">
+                    <div class="shuffle res-hide">
                         <i class="fa-solid fa-shuffle shuffle__img"></i>
                         <div class="dot_below shuffle__active"></div>
                     </div>
-                    <i class="fa-solid fa-backward-step playing-control__buttons-prev"></i>
+                    <i class="fa-solid fa-backward-step playing-control__buttons-prev res-hide"></i>
                     <div class="playing-control__buttons-playpause">
                         <i class="fa-solid fa-circle-play playing-control__buttons-play"></i>
                         <i class="fa-solid fa-circle-pause playing-control__buttons-pause"></i>
                     </div>
-                    <i class="fa-solid fa-forward-step playing-control__buttons-next"></i>
-                    <div class="repeat">
+                    <i class="fa-solid fa-forward-step playing-control__buttons-next res-hide"></i>
+                    <div class="repeat res-hide">
                         <i class="fa-solid fa-repeat repeat__img"></i>
                         <div class="dot_below repeat__active"></div>
                     </div>
@@ -267,7 +271,7 @@
 
                 </div>
             </div>
-            <div class="playing-mediacontrol">
+            <div class="playing-mediacontrol res-hide">
                 <img class="playing-mediacontrol__list" src="./assets/img/now-playing/list.PNG" alt="">
                 <img class="playing-mediacontrol__remote" src="./assets/img/now-playing/remote.PNG" alt="">
                 <div class="playing-mediacontrol__volumebar">

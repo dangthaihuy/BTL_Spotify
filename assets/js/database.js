@@ -1136,7 +1136,7 @@ function renderPlaylist() {
         <li class="dis-flex-row mainhead-connav-item" id-list=${id} id = "mainhead-connav-item-${id}">
             <img src=${list.img} class="list-img" alt="">
             <div class="head-navin4 dis-flex-row">
-                <h2 class="nav-namenav-name">${list.name}</h2>
+                <h2 class="nav-namenav-name font-16 font-14tab font-10mob">${list.name}</h2>
                 <img src="./assets/img/main/headnav/play-now.png" class="nav-play hide" alt="">
             </div>
         </li>

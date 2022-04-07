@@ -6,18 +6,70 @@
 /* Tablet and Mobile */
 @media (max-width: 1023px) {
     .root__nav-bar{
+        display: block;
     }
+
     .root__overlay {
         
+    }
+
+    .res-hide {
+        display: none !important;
+    }
+
+    #root {
+        grid-template-columns: 0 100% 0;
+    }
+
+    #mainhead-connav {
+        height: max-content;
+        grid-template-columns: 49% 49%;
+        padding-bottom: 6%;
+    }
+
+    #mainhead-connav .list-img {
+        width: 50px;
+    }
+
+    #mainhead-content {
+        padding-top: 0;
+    }
+
+    .playing-song {
+        width: 50%;
+    }
+
+    .playing-song-content {
+        width: 90%;
+    }
+
+    .playing-song-content-info {
+        max-width: 100%;
     }
 }
 
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
+
+
+    
+    .font-14tab {
+        font-size: 14px ;
+    }
+
     .root__view-profile {
         right: 500px;
         display: block;
     }
+
+    #mainhead-content h1 {
+        font-size: 18px;
+    }
+    
+    #mainhead-connav h2 {
+        width: 85%;
+    }
+    
 }
 
 /* Mobile */
@@ -25,6 +77,11 @@
     /*.root-left {
         display: none;
     }*/
+
+    .font-10mob {
+        font-size: 10px;
+    }
+
     .root__view-profile {
         right: 50px;
         display: block;
