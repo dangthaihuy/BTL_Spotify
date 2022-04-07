@@ -46,9 +46,49 @@
                 </li>
             </ul>
 
-            <div class="left__action-line">
+            <!--nav-bar cho mobile va tablet-->
+            <label for="nav-input" class="root__nav-bar">
+               <img src="./assets/img/responsive/menu.png" alt="">
+            </label>
+            <input type="checkbox" hidden name="" class="nav-input-item" id="nav-input">
+            
+            <label for="nav-input" class="root__overlay"></label>
 
+            <div class="root__view-profile">
+                <label for="nav-input" class="exit-item">
+                    <img src="./assets/img/responsive/exit-item.png">
+                </label>
+                <ul class="my-account">
+                    <img src="./assets/img/user/user-avatar.jpg">
+                    <div class="personal-account"> TEAM 12</div>
+                </ul>
+                <div class="view-profile-line"></div>
+                <ul class="menu">
+                    <li class="menu-item" style="cursor: not-allowed;">
+                        <img src="./assets/img/left-sidebar/library.PNG" alt="">
+                        <span>Your library</span>
+                    </li>
+                    <li class="menu-item">
+                        <img src="./assets/img/left-sidebar/create-playlist.PNG" alt="">
+                        <span>Create Playlist</span>
+                    </li>
+                    <li class="menu-item">
+                        <img src="./assets/img/left-sidebar/liked-songs.PNG" alt="">
+                        <span>Loved Songs</span>
+                    </li>
+                </ul>
+                <div class="view-profile-line"></div>
+                <ul class="friend-activity">
+                    <div class="friend-heading">
+                        <span >
+                            Friend activity
+                        </span>
+                        <img src="./assets/img/right-sidebar/friend-activity-pc.png" alt="">
+                    </div>
+                </ul>
             </div>
+            <!------------------------------->
+            <div class="left__action-line"></div>
 
             <!--Playlist in menu-->
             <ul class="left__action-playlists">
@@ -184,7 +224,7 @@
                 <span class="right-heading-title">
                     Friend activity
                 </span>
-                <img src="./assets/img/right-sidebar/friend-activity.png" alt="" class="right-heading-avatar">
+                <img src="./assets/img/right-sidebar/friend-activity-pc.png" alt="" class="right-heading-avatar">
             </div>
             <div class="right-users">
 
@@ -243,6 +283,7 @@
 
             </div>
         </div>
+        
     </div>
     <audio id="audio" src="" preload="metadata"></audio>
     <script type="module" src="./assets/js/app.js"></script>

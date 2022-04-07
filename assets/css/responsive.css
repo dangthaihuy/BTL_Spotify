@@ -5,19 +5,28 @@
 
 /* Tablet and Mobile */
 @media (max-width: 1023px) {
-    .root-right {
-        display: none;
+    .root__nav-bar{
+    }
+    .root__overlay {
+        
     }
 }
 
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
-
+    .root__view-profile {
+        right: 500px;
+        display: block;
+    }
 }
 
 /* Mobile */
 @media (max-width: 739px) {
-    .root-left {
+    /*.root-left {
         display: none;
+    }*/
+    .root__view-profile {
+        right: 50px;
+        display: block;
     }
 }

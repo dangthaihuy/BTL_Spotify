@@ -121,8 +121,122 @@
     color: white;
 }
 
+/* nav-bar*/
+.root__nav-bar > img{
+    height: 24px;
+    width: 24px;
+    color: white;
+    margin-left: 24px;
+}
 
+.root__overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(82, 71, 71, 0.3);
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
 
+.nav-input-item:checked ~ .root__overlay {
+    display: block;
+}
+.nav-input-item:checked ~ .root__view-profile {
+    transform: translateX(0);
+    opacity: 1;
+} 
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.root__view-profile{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 100px;
+    background-color: #000000;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all linear 0.2s;
+}
+.exit-item > img {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 10px;
+    left: 2px;
+}
+.my-account > img{
+    width: 48px;
+    height: 48px;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 30px;
+    display: block;
+    border-radius: 50%;
+}
+.personal-account{
+    font-size: 2rem;
+    font-weight: 650;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+.menu{
+    margin-top: 24px;
+    align-items: center;
+}
+.menu-item > img{
+    width: 28px;
+    height: auto;
+    margin-left: 30px;
+    margin-right: 12px;
+    
+}
+.menu-item > span {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 30px;
+}
+.view-profile-line{
+    background-color: #ffffff;
+    height: 1px;
+    margin: 18px 30px 14px 30px
+}
+.friend-activity{
+
+}
+.friend-heading {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.friend-heading > span {
+    font-size: 1.6rem;
+    color: rgb(255, 255, 255);
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.friend-heading > img {
+    width: 20px;
+    height: auto;
+    margin-right: 30px;
+    margin-top: 20px;
+}
 
 
 
