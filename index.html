@@ -19,6 +19,65 @@
 
 <body>
     <div id="root">
+        <div class="root__header-mobile-tablet">
+            <div class="header__mobile-tablet">
+                <div class="header__right">
+                    <label class="header__right-home" style="cursor:pointer;">
+                        <img src="./assets/img/responsive/Header-Home.png">
+                    </label>
+                    <label class="header__right-search" style="cursor:pointer;">
+                        <img src="./assets/img/responsive/Header-search.png">
+                    </label>
+                    <label for="nav-input" class="root__nav-bar" style="cursor:pointer;">
+                        <img src="./assets/img/responsive/menu.png" alt="">
+                    </label>
+                </div>
+                <div class="header__left">
+                    <img src="./assets/img/responsive/header-spotify-item.png">
+                    <span>Spotify</span>
+                </div>
+            </div>
+
+            <input type="checkbox" hidden name="" class="nav-input-item" id="nav-input">
+
+            <div class="root__view-profile">
+                 <label for="nav-input" class="exit-item">
+                     <img src="./assets/img/responsive/exit-item.png">
+                 </label>
+                 <ul class="my-account">
+                     <img src="./assets/img/user/user-avatar.jpg">
+                     <div class="personal-account"> TEAM 12</div>
+                 </ul>
+                 <div class="view-profile-line"></div>
+                 <ul class="menu">
+                     <li class="menu-item" style="cursor: not-allowed;">
+                         <img src="./assets/img/left-sidebar/library.PNG" alt="">
+                         <span>Your library</span>
+                     </li>
+                     <li class="menu-item">
+                         <img src="./assets/img/left-sidebar/create-playlist.PNG" alt="">
+                         <span>Create Playlist</span>
+                     </li>
+                     <li class="menu-item">
+                         <img src="./assets/img/left-sidebar/liked-songs.PNG" alt="">
+                         <span>Loved Songs</span>
+                     </li>
+                 </ul>
+                 <div class="view-profile-line"></div>
+                 <ul class="friend-activity">
+                     <div class="friend-heading">
+                         <span >
+                             Friend activity
+                         </span>
+                         <img src="./assets/img/right-sidebar/friend-activity-pc.png" alt="">
+                     </div>
+                 </ul>
+                
+            </div>
+            
+            <label for="nav-input" class="root__overlay"></label>
+        </div>
+
         <div class="root__left res-hide">
             <img class="left-img" src="./assets/img/left-sidebar/spotify.png" alt="">
             <ul class="left__navigation">
@@ -63,6 +122,7 @@
             </ul>
 
         </div>
+
         <div class="root__main" id="root__main">
             <div id="mainhead-fixed" class="dis-flex-row">
                 <div class="mainhead-item dis-flex-row" style="width: 84px;">
@@ -81,62 +141,8 @@
                 <div id="main-head" style="display: block;">
                     <div id="mainhead-content">
                         <div id="mainhead-res">
+
                             <h1 id="timer-head">Good morning</h1>
-                            <div class="header__mobile-tablet">
-                                <div class="header__right">
-                                    <label class="header__right-home" style="cursor:help;">
-                                        <img src="./assets/img/responsive/Header-Home.png">
-                                    </label>
-                                    <label class="header__right-search" style="cursor:help;">
-                                        <img src="./assets/img/responsive/Header-search.png">
-                                    </label>
-                                    <label for="nav-input" class="root__nav-bar" style="cursor:help;">
-                                        <img src="./assets/img/responsive/menu.png" alt="">
-                                    </label>
-                                </div>
-                                <div class="header__left">
-                                    <img src="./assets/img/responsive/header-spotify-item.png">
-                                    <span>Spotify</span>
-                                </div>
-                            </div>
-                            
-                            <div class="root__view-profile">
-                                 <label for="nav-input" class="exit-item">
-                                     <img src="./assets/img/responsive/exit-item.png">
-                                 </label>
-                                 <ul class="my-account">
-                                     <img src="./assets/img/user/user-avatar.jpg">
-                                     <div class="personal-account"> TEAM 12</div>
-                                 </ul>
-                                 <div class="view-profile-line"></div>
-                                 <ul class="menu">
-                                     <li class="menu-item" style="cursor: not-allowed;">
-                                         <img src="./assets/img/left-sidebar/library.PNG" alt="">
-                                         <span>Your library</span>
-                                     </li>
-                                     <li class="menu-item">
-                                         <img src="./assets/img/left-sidebar/create-playlist.PNG" alt="">
-                                         <span>Create Playlist</span>
-                                     </li>
-                                     <li class="menu-item">
-                                         <img src="./assets/img/left-sidebar/liked-songs.PNG" alt="">
-                                         <span>Loved Songs</span>
-                                     </li>
-                                 </ul>
-                                 <div class="view-profile-line"></div>
-                                 <ul class="friend-activity">
-                                     <div class="friend-heading">
-                                         <span >
-                                             Friend activity
-                                         </span>
-                                         <img src="./assets/img/right-sidebar/friend-activity-pc.png" alt="">
-                                     </div>
-                                 </ul>
-                                
-                            </div>
-                            <input type="checkbox" hidden name="" class="nav-input-item" id="nav-input">
-                             
-                            <label for="nav-input" class="root__overlay"></label>
 
                         </div>
                         
