@@ -19,7 +19,7 @@ const mainOpenPlayList = $('.main-openplaylist')
 const mainOpenPlayListHeader = $('.main-openplaylist-header')
 const mainBodyPlaylist = $('.main-openplaylist-body')
 
-const actionePrevPage = $('#action__prevpage')
+const actionePrevPage = $('.action__prevpage')
 const playAlbumBtn = $('.main-openplaylist-body__btns-play')
 const timeSongNow = $('.playing-control__playback__timeplayed')
 const timeTotalSongNow = $('.playing-control__playback__timetotal')
