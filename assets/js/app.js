@@ -301,7 +301,7 @@ const app = {
         actionePrevPage.onclick = function () {
             listAlbum.style.display = 'block'
             mainOpenPlayList.style.display = 'none'
-
+            console.log('exit');
         }
     },
     //============================================================================
