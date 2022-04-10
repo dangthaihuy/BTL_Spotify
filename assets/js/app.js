@@ -1,5 +1,5 @@
 import { allSongs, headerList, albumDailyMixes, bestOfArtistList, recentlyPlayedList } from "./database.js";
-console.log(recentlyPlayedList);
+
 
 
 
@@ -19,7 +19,8 @@ const mainOpenPlayList = $('.main-openplaylist')
 const mainOpenPlayListHeader = $('.main-openplaylist-header')
 const mainBodyPlaylist = $('.main-openplaylist-body')
 
-const actionePrevPage = $('.action__prevpage')
+const actionePrevPages = $$('.action__prevpage')
+
 const playAlbumBtn = $('.main-openplaylist-body__btns-play')
 const timeSongNow = $('.playing-control__playback__timeplayed')
 const timeTotalSongNow = $('.playing-control__playback__timetotal')
@@ -298,10 +299,14 @@ const app = {
             }
         }
 
-        actionePrevPage.onclick = function () {
-            listAlbum.style.display = 'block'
-            mainOpenPlayList.style.display = 'none'
-            console.log('exit');
+        // listAlbum.style.display = 'block'
+        // mainOpenPlayList.style.display = 'none'
+
+        for (const actionePrevPage of actionePrevPages) {
+            actionePrevPage.onclick = function () {
+                listAlbum.style.display = 'block'
+                mainOpenPlayList.style.display = 'none'
+            }
         }
     },
     //============================================================================
