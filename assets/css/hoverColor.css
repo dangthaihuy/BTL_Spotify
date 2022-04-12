@@ -1,24 +1,55 @@
 .color1 {
     transition: all linear 0.3s;
-    background-color: rgb(74, 53, 144);
+    background-color: rgb(74, 53, 144) !important;
 }
 .color2 {
     transition: all linear 0.3s;
-    background-color: rgb(142, 128, 86);
+    background-color: rgb(142, 128, 86) !important;
 }
 .color3 {
     transition: all linear 0.3s;
-    background-color: rgb(42, 102, 80);
+    background-color: rgb(42, 102, 80) !important;
 }
 .color4 {
     transition: all linear 0.3s;
-    background-color: rgb(180, 200, 200);
+    background-color: rgb(180, 200, 200) !important;
 }
 .color5 {
     transition: all linear 0.3s;
-    background-color: rgb(13, 54, 75);
+    background-color: rgb(13, 54, 75) !important;
 }
 .color6 {
     transition: all linear 0.3s;
-    background-color: rgb(3, 24, 60);
+    background-color: rgb(3, 24, 60) !important;
+}
+
+.fixedColor1 {
+    transition: all linear 0.3s;
+    background-color: rgb(74, 53, 144) !important;
+    background-image: linear-gradient(rgb(74, 53, 144), rgba(13, 54, 75, 0.35));
+}
+.fixedColor2 {
+    transition: all linear 0.3s;
+    background-color: rgb(142, 128, 86) !important;
+    background-image: linear-gradient(rgb(142, 128, 86), rgba(13, 54, 75, 0.35));
+}
+.fixedColor3 {
+    transition: all linear 0.3s;
+    background-color: rgb(42, 102, 80) !important;
+    background-image: linear-gradient(rgb(42, 102, 80), rgba(13, 54, 75, 0.35));
+}
+.fixedColor4 {
+    transition: all linear 0.3s;
+    background-color: rgb(180, 200, 200) !important;
+    background-image: linear-gradient(rgb(180, 200, 200), rgba(13, 54, 75, 0.35));
+}
+.fixedColor5 {
+    transition: all linear 0.3s;
+    background-color: rgb(13, 54, 75) !important;
+    background-image: linear-gradient(rgb(13, 54, 75), rgba(13, 54, 75, 0.35));
+}
+.fixedColor6 {
+    transition: all linear 0.3s;
+    background-color: rgb(3, 24, 60) !important;
+    background-image: linear-gradient(rgb(3, 24, 60), rgba(13, 54, 75, 0.35));
 }

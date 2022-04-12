@@ -179,17 +179,28 @@
     padding-right: 3px;
 }
 
+#mainhead-fixed {
+    background-color: rgba(13, 54, 75, 0.35);
+}
+
+#mainhead-fixed2 {
+    
+}
+
 #mainhead-fixed2,
 #mainhead-fixed {
     z-index: 5;
     position: sticky;
     top: 0;
     height: 60px;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
     padding: 0 30px;
-    background-color: rgba(255,255,255,0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    /* background-color: rgba(255,255,255,0); */
 }
 
 #mainhead-fixed2 img,
@@ -543,12 +554,12 @@
 .main-openplaylist-header {
     display: flex;
     align-items: flex-end;
-    padding: 80px 32px 24px;
+    padding: 20px 32px 24px;
 }
 
 .main-openplaylist-header > img {
     width: 232px;
-    box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
+    box-shadow: 0 4px 60px rgb(0 0 0 / 10%);
     margin-right: 24px;
 }
 
