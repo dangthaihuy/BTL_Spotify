@@ -234,8 +234,6 @@
     flex-direction: row;
     justify-content: space-between;
 }
-
-
 /*-------root__header-mobile-tablet--------*/
 
 .root__header-mobile-tablet{
@@ -265,15 +263,6 @@
     display: block;
 }
 .nav-input-item:checked ~ .root__view-profile {
-    transform: translateX(0);
-    opacity: 1;
-    z-index: 6;
-} 
-
-.nav-input-item2:checked ~ .root__overlay {
-    display: block;
-}
-.nav-input-item2:checked ~ .root__view-profile {
     transform: translateX(0);
     opacity: 1;
     z-index: 6;
@@ -726,6 +715,17 @@
     width: 16px;
     
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
