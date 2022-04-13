@@ -1,7 +1,5 @@
 /* PC */
-@media (min-width: 1024px) {
-
-}
+@media (min-width: 1024px) {}
 
 /* Tablet and Mobile */
 @media (max-width: 1023px) {
@@ -13,8 +11,7 @@
         grid-template-columns: 0 100% 0;
     }
 
-    #mainhead-fixed
-     {
+    #mainhead-fixed {
         display: none;
     }
 
@@ -44,7 +41,7 @@
         max-width: 100%;
     }
 
-    #timer-head{
+    #timer-head {
         margin-top: 60px;
     }
 
@@ -55,17 +52,18 @@
     .header__mobile-tablet {
         display: flex;
     }
-    
-    .nav-input-item:checked ~ .header__mobile-tablet  {
+
+    .nav-input-item:checked~.header__mobile-tablet {
         opacity: 1;
         display: none;
     }
 }
+
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
-    
+
     .font-14tab {
-        font-size: 14px ;
+        font-size: 14px;
     }
 
     .root__view-profile {
@@ -76,40 +74,47 @@
     #mainhead-content h1 {
         font-size: 18px;
     }
-    
+
     #mainhead-connav h2 {
         width: 85%;
     }
-    .header__left > img {
+
+    .header__left>img {
         width: 40px;
         height: auto;
         margin-left: 24px;
     }
-    .header__left > span {
+
+    .header__left>span {
         font-size: 2.9rem;
         font-weight: 700;
         color: #ffffff;
         margin-left: 15px;
     }
+
     .header__right {
         margin-left: 70%;
     }
-    .header__right > label {
+
+    .header__right>label {
         margin-left: 40px;
     }
-    .header__right-home > img {
+
+    .header__right-home>img {
         width: 25px;
         height: auto;
     }
-    .header__right-search > img {
+
+    .header__right-search>img {
         width: 25px;
         height: auto;
     }
-    .root__nav-bar > img {
+
+    .root__nav-bar>img {
         width: 25px;
         height: auto;
     }
-    
+
 }
 
 /* Mobile */
@@ -125,30 +130,49 @@
     .root__view-profile {
         right: 50px;
     }
-    .header__left > img {
+
+    .header__left>img {
         width: 37px;
         height: auto;
         margin-left: 24px;
     }
-    .header__left > span {
+
+    .header__left>span {
         margin-left: 8px;
     }
+
     .header__right {
         margin-left: 55%;
     }
-    .header__right > label {
+
+    .header__right>label {
         margin-left: 23px;
     }
-    .header__right-home > img {
+
+    .header__right-home>img {
         width: 20px;
         height: auto;
     }
-    .header__right-search > img {
+
+    .header__right-search>img {
         width: 20px;
         height: auto;
     }
-    .root__nav-bar > img {
+
+    .root__nav-bar>img {
         width: 20px;
         height: auto;
     }
+
+    .body-nav-list {
+        overflow-x: scroll;
+    }
+
+    .body-playlist-item {
+        min-width: 140px;
+        margin-right: 4px;
+    }
+
+
+
 }

@@ -1011,7 +1011,7 @@ const dailyMixesFactory = {
                 <img src="./assets/img/main/headnav/play-now.png" alt="" class="body-list-play hide">
                 <img src=${album.img} alt="">
                 <a href="#" class="body-playlist-item-header font-16">${album.name}</a>
-                <a href="#" class="font-14" style="margin-top: 4px;">${album.description}</a>
+                <a href="#" class="font-14 album-decription" style="margin-top: 4px;">${album.description}</a>
             </div>
             `
         });
@@ -1099,7 +1099,7 @@ const recentlyPlayed = {
                 <img src="./assets/img/main/headnav/play-now.png" alt="" class="body-list-play hide">
                 <img src=${list.img} alt="">
                 <a href="#" class="body-playlist-item-header font-16">${list.name}</a>
-                <a href="#" class="font-14" style="margin-top: 4px;">${list.description}</a>
+                <a href="#" class="font-14 album-decription" style="margin-top: 4px;">${list.description}</a>
             </div>
             `
         })
@@ -1122,7 +1122,7 @@ function renderBestOfArtistList() {
             <img src="./assets/img/main/headnav/play-now.png" alt="" class="body-list-play hide">
             <img src=${list.img} alt="">
             <a href="#" class="body-playlist-item-header font-16">This Is ${list.name}</a>
-            <a href="#" class="font-14" style="margin-top: 4px;">${list.description}</a>
+            <a href="#" class="font-14 album-decription" style="margin-top: 4px;">${list.description}</a>
         </div>
         `
     })
