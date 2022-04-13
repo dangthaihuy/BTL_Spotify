@@ -13,8 +13,8 @@
         grid-template-columns: 0 100% 0;
     }
 
-    #mainhead-fixed,
-    #mainhead-fixed2 {
+    #mainhead-fixed
+     {
         display: none;
     }
 
