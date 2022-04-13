@@ -97,15 +97,9 @@
     .header__right > label {
         margin-left: 40px;
     }
-    .header__right-home > img {
-        width: 25px;
-        height: auto;
-    }
-    .header__right-search > img {
-        width: 25px;
-        height: auto;
-    }
-    .root__nav-bar > img {
+    .header__right-home > img, 
+    .header__right-search > img, 
+    .root__nav-bar > img  {
         width: 25px;
         height: auto;
     }
@@ -139,16 +133,52 @@
     .header__right > label {
         margin-left: 23px;
     }
-    .header__right-home > img {
+
+    .header__right-home > img, 
+    .header__right-search > img, 
+    .root__nav-bar > img  {
         width: 20px;
         height: auto;
     }
-    .header__right-search > img {
-        width: 20px;
-        height: auto;
+    /*header cho playlist trong mobile*/
+    .main-openplaylist {
+        
     }
-    .root__nav-bar > img {
-        width: 20px;
-        height: auto;
+    .main-openplaylist-header{
+        display: contents;
+    }
+    .main-openplaylist-header__title{
+        margin: 20px auto 10px 30px;
+    }
+    .main-openplaylist-header > img {
+        width: 150px;
+        display: block; 
+        margin-left: auto; 
+        margin-right: auto;
+        margin-top: 15px;
+    }
+    .main-openplaylist-header__title__type {
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+    .main-openplaylist-header__title__name {
+        font-size: 3rem;
+        line-height: 4rem;
+        font-weight: 600;
+    }
+    .main-openplaylist-body__btns {
+        padding-left: 20px;
+        padding-bottom: 10px;
+    }
+    .main-openplaylist-body__btns-play {
+        width: 30px;
+        margin-right: 25px;
+    }
+    .main-openplaylist-body__table {
+        padding: 0 20px;
+    }
+    .nav-input-item2:checked ~ .header__mobile-tablet  {
+        opacity: 1;
+        display: none;
     }
 }
