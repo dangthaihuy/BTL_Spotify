@@ -9,6 +9,7 @@
 
     #root {
         grid-template-columns: 0 100% 0;
+        grid-template-rows: auto 80px;  
     }
 
     #mainhead-fixed {
@@ -27,6 +28,7 @@
 
     #mainhead-content {
         padding-top: 0;
+        padding: 0px 10px;
     }
 
     .playing-song {
@@ -56,6 +58,20 @@
     .nav-input-item:checked~.header__mobile-tablet {
         opacity: 1;
         display: none;
+    }
+
+    #play-info .playing-song > img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .playing-song-content-info-artist,
+    .playing-song-content-info-name {
+        font-size: 10px;
+    }
+
+    #res-input {
+        display: block;
     }
 }
 
@@ -164,7 +180,7 @@
         height: auto;
     }
 
-    .body-nav-list {
+    .body-play-list {
         overflow-x: scroll;
     }
 
@@ -173,6 +189,16 @@
         margin-right: 4px;
     }
 
+    #mainhead-connav h2 {
+        width: 100%;
+    }
 
+    #mainhead-connav .head-navin4 {
+        padding: 10px;
+    }
+
+    #main-body {
+        padding: 36px 10px;
+    }
 
 }

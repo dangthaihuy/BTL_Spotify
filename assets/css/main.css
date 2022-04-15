@@ -864,14 +864,30 @@
     background-color: #181818;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#play-info {
+    width: 100%;
+    background-color: #181818;
+    display: flex;
+    align-items: center;
     padding: 0 16px;
     justify-content: space-between;
 }
 
+#res-input {
+    width: 100%;
+}
+
+#res-input input {
+    width: 100%;
+    margin: 0;
+}
+
 .playing-song {
     display: flex;
-    
-    min-width: 300px;
     
 }
 

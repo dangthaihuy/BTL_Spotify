@@ -45,34 +45,3 @@ function color6() {
     main_head.setAttribute('class', 'color6');
     mainhead_fixed.setAttribute('class', 'fixedColor6');
 }
-
-document.getElementById(list_item_0).onclick = function () { changeColor1() };
-document.getElementById(list_item_1).onclick = function () { changeColor2() };
-document.getElementById(list_item_2).onclick = function () { changeColor3() };
-document.getElementById(list_item_3).onclick = function () { changeColor4() };
-document.getElementById(list_item_4).onclick = function () { changeColor5() };
-document.getElementById(list_item_5).onclick = function () { changeColor6() };
-
-function changeColor1() {
-    main_head_fixed2.setAttribute('class', 'color1');
-}
-
-function changeColor2() {
-    main_head_fixed2.setAttribute('class', 'color2');
-}
-
-function changeColor3() {
-    main_head_fixed2.setAttribute('class', 'color3');
-}
-
-function changeColor4() {
-    main_head_fixed2.setAttribute('class', 'color4');
-}
-
-function changeColor5() {
-    main_head_fixed2.setAttribute('class', 'color5');
-}
-
-function changeColor6() {
-    main_head_fixed2.setAttribute('class', 'color6');
-}

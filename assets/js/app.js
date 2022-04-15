@@ -6,6 +6,9 @@ import { allSongs, headerList, albumDailyMixes, bestOfArtistList, recentlyPlayed
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
+//NGHIA
+const fixedHeader2 = $('#mainhead-fixed2')
+
 //HUY
 const helloList = $('#mainhead-connav')
 const madeForYou = $('#madeforyou-list')
@@ -389,6 +392,11 @@ const app = {
         mainOpenPlayListHeader.style.backgroundColor = `rgb(${list.backgroundColor})`
         mainOpenPlayListHeader.style.backgroundImage = `linear-gradient(rgb(${list.backgroundColor}), rgb(24, 24, 24) 600px)`
         mainBodyPlaylist.style.backgroundImage = `linear-gradient(rgb(${list.headerColor}), rgb(24, 24, 24))`
+
+        //NGHIA 15/04
+        fixedHeader2.style.backgroundColor = `rgb(${list.backgroundColor})`
+        
+        mainOpenPlayList.style.transform =translateY(0);
     },
     //========================================================
 
