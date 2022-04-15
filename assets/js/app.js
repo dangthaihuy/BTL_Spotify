@@ -395,8 +395,6 @@ const app = {
 
         //NGHIA 15/04
         fixedHeader2.style.backgroundColor = `rgb(${list.backgroundColor})`
-        
-        mainOpenPlayList.style.transform =translateY(0);
     },
     //========================================================
 

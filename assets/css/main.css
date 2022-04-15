@@ -128,7 +128,7 @@
 /*----------------CSS MAIN-SIDEBAR------------------*/
 .root__main {
     grid-area: root-main;
-    background: rgba(90, 90, 90, 1); 
+    background-color: #000; 
     overflow: overlay;
     height: 100%;
     
@@ -716,22 +716,47 @@
     
 }
 
+.main-footer {
+    z-index: 5;
+    position: fixed;
+    bottom: 5%;
+    width: 96%;
+    background-color: #121111;
+    margin: 0 2%;
+    padding: 5px 10px 0;
+    border-radius: 10px;
+}
 
+.foot-play-info {
+    margin-bottom: 5px;
+}
 
+.foot-playing {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+.foot-play-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.foot-play-info .playing-control__buttons-playpause > i {
+    width: 32px;
+    height: 32px;
+}
 
+.res-input {
+    width: 100%;
+}
 
-
-
-
-
-
-
-
-
-
-
+.res-input input {
+    width: 100%;
+    margin: 0;
+}
 
 
 
@@ -875,15 +900,6 @@
     align-items: center;
     padding: 0 16px;
     justify-content: space-between;
-}
-
-#res-input {
-    width: 100%;
-}
-
-#res-input input {
-    width: 100%;
-    margin: 0;
 }
 
 .playing-song {

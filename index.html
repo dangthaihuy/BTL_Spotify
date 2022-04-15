@@ -66,10 +66,6 @@
 
         <div class="root__main" id="root__main">
 
-            
-
-            
-
             <div id="list-album" style="display:block;">  
                 <div id="mainhead-fixed" class="dis-flex-row">
                     <div class="mainhead-item dis-flex-row" style="width: 84px;">
@@ -221,6 +217,8 @@
                         </div>
                     </div>
                 </div>
+
+                
             </div>
 
             <div class="main-openplaylist" style="display: none;">
@@ -262,6 +260,31 @@
                     </div>
                 </div>
             </div>
+
+            <div class="main-footer dis-none" >
+                <div class="foot-play-info">
+                    <div class="foot-playing">
+                        <img class="playing-song-img" src="./data/singles/super-idol-remix__a-tu.jpg" alt="">
+                        <div class="playing-song-content-info">
+                            <div class="playing-song-content-info-name">Super Idol (remix)</div>
+                            <div class="playing-song-content-info-artist">阿肆</div>
+                        </div>
+                        <img src="./assets/img/now-playing/favorite.png" alt="" class="playing-song-content-favourite ">
+                    </div>
+
+                    <div class="playing-control__buttons-playpause">
+                        <i class="fa-solid fa-circle-play playing-control__buttons-play"></i>
+                        <i class="fa-solid fa-circle-pause playing-control__buttons-pause"></i>
+                    </div>
+
+                </div>
+
+                <div class="res-input">
+                    <input type="range" class="playing-control__playback__slider" value="0" step="1" min="0" max="100">
+                </div>
+                
+            </div>
+
         </div>
         <div class="root__right res-hide">
             <div class="right-heading">
@@ -274,7 +297,7 @@
 
             </div>
         </div>
-        <div class="root__playing">
+        <div class="root__playing res-hide">
             <div id="play-info">
                 <div class="playing-song">
                     <img class="playing-song-img" src="./data/singles/super-idol-remix__a-tu.jpg" alt="">
@@ -285,35 +308,35 @@
                         </div>
                         <img src="./assets/img/now-playing/favorite.png" alt="" class="playing-song-content-favourite ">
                         <img src="./assets/img/now-playing/overlay.png" alt=""
-                            class="playing-song-content-overlay res-hide">
+                            class="playing-song-content-overlay">
     
                     </div>
                 </div>
                 <div class="playing-control">
                     <div class="playing-control__buttons">
-                        <div class="shuffle res-hide">
+                        <div class="shuffle">
                             <i class="fa-solid fa-shuffle shuffle__img"></i>
                             <div class="dot_below shuffle__active"></div>
                         </div>
-                        <i class="fa-solid fa-backward-step playing-control__buttons-prev res-hide"></i>
+                        <i class="fa-solid fa-backward-step playing-control__buttons-prev"></i>
                         <div class="playing-control__buttons-playpause">
                             <i class="fa-solid fa-circle-play playing-control__buttons-play"></i>
                             <i class="fa-solid fa-circle-pause playing-control__buttons-pause"></i>
                         </div>
-                        <i class="fa-solid fa-forward-step playing-control__buttons-next res-hide"></i>
-                        <div class="repeat res-hide">
+                        <i class="fa-solid fa-forward-step playing-control__buttons-next"></i>
+                        <div class="repeat">
                             <i class="fa-solid fa-repeat repeat__img"></i>
                             <div class="dot_below repeat__active"></div>
                         </div>
                     </div>
-                    <div class="playing-control__playback res-hide">
+                    <div class="playing-control__playback">
                         <div class="playing-control__playback__timeplayed">0:00</div>
                         <input type="range" class="playing-control__playback__slider" value="0" step="1" min="0" max="100">
                         <div class="playing-control__playback__timetotal">3:40</div>
     
                     </div>
                 </div>
-                <div class="playing-mediacontrol res-hide">
+                <div class="playing-mediacontrol">
                     <img class="playing-mediacontrol__list" src="./assets/img/now-playing/list.PNG" alt="">
                     <img class="playing-mediacontrol__remote" src="./assets/img/now-playing/remote.PNG" alt="">
                     <div class="playing-mediacontrol__volumebar">
@@ -330,9 +353,7 @@
                 </div>
             </div>
 
-            <div id="res-input" class="dis-none">
-                <input type="range" class="playing-control__playback__slider" value="0" step="1" min="0" max="100">
-            </div>
+            
             
         </div>
 
