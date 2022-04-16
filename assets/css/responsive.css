@@ -214,4 +214,32 @@
         padding: 36px 10px;
     }
 
+
+    .main-openplaylist-header {
+        flex-direction: column;
+        align-items: normal;
+    }
+
+    .main-openplaylist-header > img {
+        width: 40%;
+        margin: 0 30%;
+    }
+
+    .main-openplaylist-header__title {
+        margin-top: 15px;
+    }
+
+    .main-openplaylist-header__title__name {
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .album {
+        display: none;
+    }
+
+    .main-openplaylist-body__table {
+        padding: 0 10px;
+    }
+
 }
