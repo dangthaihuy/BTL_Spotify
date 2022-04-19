@@ -18,7 +18,7 @@
 
     #mainhead-connav {
         height: max-content;
-        grid-template-columns: 49% 49%;
+        grid-template-columns: 48% 48%;
         padding-bottom: 6%;
     }
 
@@ -57,14 +57,14 @@
     .header__mobile-tablet {
         position: fixed;
         top: 0;
-        z-index: 10;
+        z-index: 8;
         width: 100%;
     }
 
     .header__wrapper {
         display: flex;
         justify-content: space-between;
-        padding: 10px;
+        padding: 15px 10px;
         background-color: rgba(117, 112, 112, 0.3);
         width: 100%;
     }
@@ -125,7 +125,79 @@
         margin: 0;
     }
 
-    
+    /* play screen */    
+    .root__playing {
+        height: 100%;
+        z-index: 10;   
+        animation: slideUp ease-in 0.1s forwards;
+    }
+    #play-info {
+        flex-direction: column;
+        padding-bottom: 15%;
+        padding-top: 5%; 
+    }
+    .playing-song-img {
+        width: 80%;
+        margin: 15% auto;
+    }
+    .playing-song {
+        flex-direction: column-reverse;
+        margin: auto 3%;
+        width: 100%;
+    }
+    .playing-control {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .playing-control__buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 10% 0;
+    }
+    .playing-control i {
+        font-size: 2.4rem;
+    }
+    .play-mob .playing-control__buttons-playpause i {
+        font-size: 6rem !important;
+    }
+    .playing-control__playback__timeplayed, .playing-control__playback__timetotal {
+        font-size: 1.4rem;
+    }
+
+    .playing-song-content {
+        display: flex;
+        justify-content: space-between;
+    }
+    .play-mob .playing-song-content-info div{
+        font-size: 2rem;
+        padding: 5px 0px;
+    }
+    .playing-mediacontrol {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .playing-mediacontrol img {
+        width: 2.4rem;
+    }
+    .play-mob .playing-song-content-overlay, .playing-mediacontrol__volumebar, .playing-mediacontrol__fullscreen {
+        display: none;
+    }
+    .playing-song-content-favourite {
+        width: 2.4rem;
+    }
+    .playing-song-content__wrapper {
+        display: flex;
+        
+    }
+    .playing-song-content-icon-mob {
+        color: var(--white-color);
+        font-size: 2.2rem;
+        margin: auto;
+        padding: 1rem;
+    }
+
 }
 
 /* Tablet */
@@ -148,6 +220,9 @@
         width: 85%;
     }
 
+    #play-info {
+        padding: 5% 8% 15% 8%;
+    }
 }
 
 /* Mobile */

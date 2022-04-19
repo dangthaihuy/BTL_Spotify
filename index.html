@@ -300,9 +300,12 @@
                 <div class="playing-song">
                     <img class="playing-song-img" src="./data/singles/super-idol-remix__a-tu.jpg" alt="">
                     <div class="playing-song-content">
-                        <div class="playing-song-content-info">
-                            <div class="playing-song-content-info-name">Super Idol (remix)</div>
-                            <div class="playing-song-content-info-artist">阿肆</div>
+                        <div class="playing-song-content__wrapper">
+                            <div class="playing-song-content-icon-mob res-hide"><i class="fas fa-angle-down"></i></div>
+                            <div class="playing-song-content-info">
+                                <div class="playing-song-content-info-name">Super Idol (remix)</div>
+                                <div class="playing-song-content-info-artist">阿肆</div>
+                            </div>
                         </div>
                         <img src="./assets/img/now-playing/favorite.png" alt="" class="playing-song-content-favourite ">
                         <img src="./assets/img/now-playing/overlay.png" alt=""
@@ -351,6 +354,7 @@
                 </div>
             </div>                    
         </div>
+        
 
     </div>
     <audio id="audio" src="" preload="metadata"></audio>
@@ -358,6 +362,7 @@
     <script type="module" src="./assets/js/database.js"></script>
     <script type="module" src="./assets/js/timer.js"></script>
     <script type="module" src="./assets/js/hover.js"></script>
+    <script type="module" src="./assets/js/playmob.js"></script>
     <audio id="listAudio"></audio>
 </body>
 

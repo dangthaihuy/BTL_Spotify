@@ -108,8 +108,23 @@ html{
     }
 }
 
+@keyframes slideUp {
+    0% {
+        transform: translateY(500px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
 
-
+@keyframes slideDown {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(500px);
+    }
+}
 
 
 

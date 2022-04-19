@@ -23,6 +23,7 @@
         'root-playing root-playing root-playing';
     grid-template-columns: 200px auto 250px; 
     grid-template-rows: auto 90px;  
+    background-color: var(--black-color);
 }
 
 /*----------------CSS LEFT-SIDEBAR------------------*/
@@ -664,16 +665,12 @@
 .main-footer {
     z-index: 5;
     position: fixed;
-    bottom: 5%;
+    bottom: 2%;
     width: 96%;
     background-color: #121111;
     margin: 0 2%;
-    padding: 5px 10px 0;
+    padding: 5px 10px;
     border-radius: 10px;
-}
-
-.foot-play-info {
-    margin-bottom: 5px;
 }
 
 .foot-playing {
@@ -690,8 +687,8 @@
 }
 
 .foot-play-info .playing-control__buttons-playpause > i {
-    width: 32px;
-    height: 32px;
+    font-size: 30px;
+   
 }
 
 .res-input {
