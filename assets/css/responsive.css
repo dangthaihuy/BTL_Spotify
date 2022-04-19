@@ -68,9 +68,10 @@
 
 /* footer */
 
-    .foot-playing .playing-song-img {
+    .foot-playing .playing-song-img-mob {
         width: 32px;
         height: 32px;
+        border-radius: 50%;
     }
 
     .foot-playing .playing-song-content-favourite {

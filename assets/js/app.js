@@ -29,13 +29,14 @@ const timeSongNow = $('.playing-control__playback__timeplayed')
 const timeTotalSongNow = $('.playing-control__playback__timetotal')
 //===========================================================
 //QUYNH
-const titleCurrentSong = $('.playing-song-content-info-name')
-const artistCurrentSong = $('.playing-song-content-info-artist')
+const titleCurrentSongs = $$('.playing-song-content-info-name')
+const artistCurrentSongs = $$('.playing-song-content-info-artist')
 const imgCurrentSong = $('.playing-song-img')
+const imgCurrentSongMob = $('.playing-song-img-mob')
 const audioCurrentSong = $('#audio')
 const processCurrentSong = $('.playing-control__playback__slider')
 
-const playBtn = $('.playing-control__buttons-playpause')
+const playBtns = $$('.playing-control__buttons-playpause')
 const previousBtn = $('.playing-control__buttons-prev')
 const nextBtn = $('.playing-control__buttons-next')
 const shuffleBtn = $('.shuffle')
@@ -105,14 +106,17 @@ const app = {
         imgAnimate.pause()
 
         //Xử lý khi click play
-        playBtn.onclick = function () {
-            if (_this.isPlay) {
-                audioCurrentSong.pause()
-            }
-            else {
-                audioCurrentSong.play()
+        for (const playBtn of playBtns) {
+            playBtn.onclick = function () {
+                if (_this.isPlay) {
+                    audioCurrentSong.pause()
+                }
+                else {
+                    audioCurrentSong.play()
+                }
             }
         }
+        
 
         playAlbumBtn.onclick = function () {
             _this.currentIndex = 0
@@ -124,14 +128,18 @@ const app = {
         //song play
         audioCurrentSong.onplay = function () {
             _this.isPlay = true
-            playBtn.classList.add('playing')
+            for (const playBtn of playBtns) {
+                playBtn.classList.add('playing')
+            }
             imgAnimate.play()
         }
 
         //song pause
         audioCurrentSong.onpause = function () {
             _this.isPlay = false
-            playBtn.classList.remove('playing')
+            for (const playBtn of playBtns) {
+                playBtn.classList.remove('playing')
+            }
             imgAnimate.pause()
         }
 
@@ -316,9 +324,14 @@ const app = {
     //QUỲNH
     //cập nhật trạng thái của bài hát đang phát trên thanh
     loadCurrentSong: function () {
-        titleCurrentSong.textContent = this.listSong[this.currentIndex].name
-        artistCurrentSong.textContent = this.listSong[this.currentIndex].artist
+        for (const titleCurrentSong of titleCurrentSongs) {
+            titleCurrentSong.textContent = this.listSong[this.currentIndex].name
+        }
+        for (const artistCurrentSong of artistCurrentSongs) {
+            artistCurrentSong.textContent = this.listSong[this.currentIndex].artist
+        }
         imgCurrentSong.src = this.listSong[this.currentIndex].img
+        imgCurrentSongMob.src = this.listSong[this.currentIndex].img
         audioCurrentSong.src = this.listSong[this.currentIndex].path
     },
 
