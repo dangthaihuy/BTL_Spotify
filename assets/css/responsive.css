@@ -220,6 +220,13 @@
         padding: 1rem;
     }
 
+    .form-login,
+    .form-register {
+        width: 60%;
+
+
+    }
+
 }
 
 /* Tablet */
@@ -252,6 +259,8 @@
     #play-info {
         padding: 5% 8% 15% 8%;
     }
+
+
 }
 
 /* Mobile */

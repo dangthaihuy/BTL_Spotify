@@ -868,7 +868,7 @@ export const headerList = [
         description: '',
         owner: "Team12",
         img: "./data/playlists/own-playlists/liked-songs.jpg",
-        songs: allSongs.filter(song => song.tag.includes('favorite')).sort(() => Math.random() - 0.5),
+        songs: allSongs,
         backgroundColor: '74, 53, 144',
         headerColor: '32, 22, 64',
         tag: ['own playlist', 'liked songs']

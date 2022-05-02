@@ -2,6 +2,12 @@ import { allUsersData } from "./usersDatabase.js"
 
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
+const TOASTSUCCESS = { title: 'Success', message: 'Đăng nhập thành công', type: 'success' }
+const TOASTERROR = { title: 'Error', message: 'Đăng nhập thất bại', type: 'error' }
+
+
+
+const main = $('#toast')
 
 const profile = $('#head-right')
 const profileRespone = $('.my-account')
@@ -24,8 +30,6 @@ const registerName = $('.form-register__name')
 const registerGmail = $('.form-register__gmail')
 const registerPassword = $('.form-register__password')
 const registerButton = $('.form-register__button')
-
-
 
 const registerClose = $('.form-register__close')
 
@@ -101,7 +105,7 @@ function checkUserLogin(userLogin) {
 
 function loginSuccess(user) {
 
-    console.log('dang nhap thanh cong');
+    toast(TOASTSUCCESS)
     loginForm.style.display = 'none'
     loginGmail.value = ''
     loginPassword.value = ''
@@ -133,7 +137,7 @@ function loginSuccess(user) {
 }
 
 function loginFail() {
-    console.log('tai khoan hoac mat khau khong dung');
+    toast(TOASTERROR)
 }
 
 function savetoLocalStorage(data) {
@@ -146,3 +150,49 @@ function getItemFromLocal() {
         allUsersData.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
     }
 }
+
+function toast({ title = '', message = '', type = '' }) {
+    if (main) {
+        const toast = document.createElement('div')
+
+        //Auto remove
+        main.appendChild(toast)
+        const autoRemoveId = setTimeout(() => {
+            main.removeChild(toast)
+        }, 3000)
+
+        //handle remove
+        toast.onclick = (e) => {
+            if (e.target.closest('.toast__close')) {
+                main.removeChild(toast)
+                clearTimeout(autoRemoveId)
+            }
+        }
+
+        const icons = {
+            success: 'fas fa-check-circle',
+            error: 'fas fa-exclamation-circle',
+        }
+
+        const icon = icons[type]
+
+
+        toast.classList.add('toast', `toast--${type}`)
+
+        toast.innerHTML = `
+            <div class="toast__icon">
+                <i class="${icon}"></i>
+            </div>
+            <div class="toast__body">
+                <h3 class="toast__title">${title}</h3>
+                <p class="toast__msg">${message}</p>
+            </div>
+            <div class="toast__close">
+                <i class="fas fa-times"></i>
+            </div>
+        `
+
+
+    }
+}
+

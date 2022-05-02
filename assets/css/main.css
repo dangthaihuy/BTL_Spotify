@@ -741,6 +741,7 @@
     grid-area: root-right;
     background-color: #000000;
     padding: 1.6rem;
+    z-index: 10;
 }
 
 .right-heading {
