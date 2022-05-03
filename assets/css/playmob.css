@@ -1,0 +1,3 @@
+.song-info {
+    grid-template-areas: 'root-playing root-playing root-playing' !important;
+    }
