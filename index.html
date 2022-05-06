@@ -358,33 +358,56 @@
                 </div>
             </div>
         </div>
-        <div class="login" style="display: none;">
+        <div class="login" style="display: none;">    
             <div class="form-login" style="display: flex;">
-                <div class="form-login__close">X</div>
-                <input class="form-login__gmail" type="text" placeholder="Nhập tài khoản">
-                <input class="form-login__password" type="password" placeholder="Nhập mật khẩu">
-                <button class="form-login__button">Đăng nhập</button>
+                <header class="form-header">Sign in</header>
+                <div class="form-login__close"><i class="fas fa-times-circle"></i></div>
+                <div class="form-login__content-wrapper">
+                    <div class="form-login__label">Email address or username</div>
+                    <input class="form-login__gmail" type="text" placeholder="Email address or username">
+                </div>
+                <div class="form-login__content-wrapper">
+                    <div class="form-login__label">Password</div>
+                    <input class="form-login__password" type="password" placeholder="Password">
+                </div>
+                <button class="form-login__button">Sign in</button>
                 <div class="form-login__switch">
-                    Chưa có tài khoản? Bấm
-                    <span class="form-login__switch-register">
-                        Đăng ký
-                    </span>
-                    tại đây
+                    <div class="form-login__switch-forgotpass">
+                        Forgot password?
+                    </div>
+                    <div class="form-login__switch-register-wrap">
+                        You dont't have account? 
+                        <span class="form-login__switch-register">
+                            Sign up
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="form-register" style="display: none;">
-                <div class="form-register__close">X</div>
-                <input class="form-register__name" type="text" placeholder="Nhập tên của bạn">
-                <input class="form-register__gmail" type="text" placeholder="Nhập tài khoản của bạn">
-                <input class="form-register__password" type="password" placeholder="Nhập mật khẩu của bạn">
-                <input class="form-register__password" type="password" placeholder="Nhập lại mật khẩu của bạn">
-                <button class="form-register__button">Đăng ký</button>
+                <header class="form-header">Sign up</header>
+                <div class="form-register__close"><i class="fas fa-times-circle"></i></div>
+                <div class="form-register__content-wrapper">
+                    <div class="form-register__label">What should we call you?</div>
+                    <input class="form-register__name" type="text" placeholder="Enter a profile name">
+                </div>
+                <div class="form-register__content-wrapper">
+                    <div class="form-register__label">What's your email?</div>
+                    <input class="form-register__name" type="text" placeholder="Enter your email">
+                </div>
+                <div class="form-register__content-wrapper">
+                    <div class="form-register__label">Create a password</div>
+                    <input class="form-register__password" type="password" placeholder="Create a password">
+                </div>
+                <div class="form-register__content-wrapper">
+                    <div class="form-register__label">Confirm a password</div>
+                    <input class="form-register__password" type="password" placeholder="Enter a password again">
+                </div>
+                <button class="form-register__button">Sign up</button>
                 <div class="form-register__switch">
-                    Đã có tài khoản? Bấm
+                    You have account?
                     <span class="form-register__switch-login">
-                        Đăng nhập
+                        Sign in
                     </span>
-                    tại đây
                 </div>
             </div>
 

@@ -1106,32 +1106,55 @@ i.playing-mediacontrol__volumebar-btn__onMedium {
 .form-register {
     flex-direction: column;
     background-color: #292929;
-    width: 30%;
+    width: 50%;
     justify-content: center;
     align-items: center;
-
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+.form-header {
+    font-size: 3.5rem;
+    color: var(--white-color);
+    padding: 10px 0px;
 }
 
 .form-login__close,
 .form-register__close {
-    font-size: 1.6rem;
-    color: white;
+    font-size: 2.0rem;
+    color: var(--white-color);
     padding: 10px;
     cursor: pointer;
-
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0.8;
 }
 
-.form-login__gmail,
+.form-login__content-wrapper, 
+.form-register__content-wrapper {
+    width: 80%;
+    margin: 8px 0px;
+}
+
+.form-login__label, 
+.form-register__label {
+    color: var(--white-color);
+    font-size: 1.6rem;
+    margin: 10px 0px;
+}
 .form-login__password,
+.form-login__gmail,
 .form-register__gmail,
 .form-register__password,
 .form-register__name {
     font-size: 1.6rem;
-    margin: 10px;
-    height: 30px;
+    height: 40px;
     outline: none;
-    width: 80%;
+    width: 100%;
     padding: 0px 12px;
+    border-radius: 10px;
 }
 
 
@@ -1140,22 +1163,31 @@ i.playing-mediacontrol__volumebar-btn__onMedium {
 .form-register__button {
     width: 80%;
     background-color: var(--primary-color);
-    color: white;
-    font-size: 1.8rem;
-    padding: 6px;
-    margin: 18px 0;
+    color: var(--white-color);
+    border-radius: 20px;
+    font-size: 1.6rem;
+    padding: 10px;
+    margin: 20px 0;
     cursor: pointer;
 }
 
-.form-login__switch,
+.form-login__switch {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    color: var(--white-color);
+    width: 80%;
+}
 .form-register__switch {
     color: white;
     font-size: 1.6rem;
-    margin-bottom: 10px;
+
 }
 
 .form-login__switch-register,
-.form-register__switch-login {
+.form-register__switch-login,
+.form-login__switch-forgotpass {
     color: var(--primary-color);
     cursor: pointer;
 }

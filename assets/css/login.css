@@ -59,12 +59,12 @@
 }
 
 .toast--success {
-    border-color: #47d864;
+    border-color: var(--primary-color);
     ;
 }
 
 .toast--success .toast__icon {
-    color: #47d864;
+    color: var(--primary-color);
 }
 
 .toast--error {
