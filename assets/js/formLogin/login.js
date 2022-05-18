@@ -2,14 +2,15 @@ import { allUsersData } from "./usersDatabase.js"
 
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
-const TOASTSUCCESS = { title: 'Success', message: 'Đăng nhập thành công', type: 'success' }
-const TOASTERROR = { title: 'Error', message: 'Đăng nhập thất bại', type: 'error' }
+const TOASTSUCCESS = { title: 'Success', message: 'You have successfully logged in to your account.', type: 'success' }
+const TOASTERROR = { title: 'Error', message: 'Log in failed. Please check your email or password', type: 'error' }
 
 
 
 const main = $('#toast')
 
 const profile = $('#head-right')
+const profileAlbum = $('#head-right2')
 const profileRespone = $('.my-account')
 
 const avatar = $('.avatar')
@@ -112,6 +113,18 @@ function loginSuccess(user) {
 
 
     profile.innerHTML = `
+        <img src="${user.avatar}" alt=""
+            style="width: 26px; height: 26px; border-radius: 50%;">
+        <p>${user.name}</p>
+        <i class="fa-solid fa-caret-down ti-down">
+            <div class="profile">
+                <div class="profile__user">Profile</div>
+                <div class="profile__logout">Logout</div>
+            </div>
+        </i>
+    `
+
+    profileAlbum.innerHTML = `
         <img src="${user.avatar}" alt=""
             style="width: 26px; height: 26px; border-radius: 50%;">
         <p>${user.name}</p>
