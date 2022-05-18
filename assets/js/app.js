@@ -80,7 +80,7 @@ const app = {
                 </div>
                 <div class="album">${song.album}</div>
                 <div class="more">
-                    <span class="more__time">0.00</span>
+                    <span class="more__time">0:00</span>
                     <img src="./assets/img/now-playing/favorite.png" alt="" class="more__favourite">
                 </div>
             </li>`
